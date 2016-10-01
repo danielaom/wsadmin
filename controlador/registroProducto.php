@@ -1,12 +1,13 @@
 <?php
-
-$con = mysqli_connect("localhost", "root", "", "restaurante");
-
-
+include_once("../BD/conexion.php");
+$cnn= new conexion();
+$con =$cnn->conectar();
+mysqli_select_db($con,"restaurante");
 if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
     exit();
 } else {
+
 
     $nombre = strtoupper($_POST["nombre"]);
     $descripcion = strtoupper($_POST["descripcion"]);
@@ -23,7 +24,7 @@ if (mysqli_connect_errno()) {
         header('location:../vista/registro_producto.php?error=201');
     } else {
 
-        $QUERY_INSERIMAGEN = "insert into imagen(idImagen,imagen) 
+        $QUERY_INSERIMAGEN = "insert into imagen(idImagen,imagen)
                             VALUES ('','$imagen')";
 
         if (!mysqli_query($con, $QUERY_INSERIMAGEN)) {
@@ -49,7 +50,3 @@ if (mysqli_connect_errno()) {
     mysqli_close($con);
 }
 ?>
-
-
-
-

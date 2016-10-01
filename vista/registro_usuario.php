@@ -1,70 +1,78 @@
 <?php
-
-$con = mysqli_connect("localhost","root","","restaurante");
-
-session_start();
-if (!isset($_SESSION['loggedin'])){
-    # code...?>
-<?php }?>
+  session_start();
+  if (!isset($_SESSION['loggedin'])){
+    # code...
+    header("location: ../index.php");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"   name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sweet stop</title>
     <meta name="description" content="Bootstrap Metro Dashboard">
     <meta name="author" content="Daniela Orellana">
+    <link rel="shortcut icon" href="img/favicon.ico">
     <meta name="keyword" content="">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" role="navigation"  class="navbar navbar-default" content="width=device-width, initial-scale=1" >
     <link href="../css/bootstrap.css" rel="stylesheet">
     <script src="../js/jquery-1.9.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
 
     <link href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/bootstrapValidator.css"/>
-    <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="../js/bootstrapValidator.js"></script>
 </head>
-<body>
+
+<body bgcolor="#EBEFF1">
 
 <nav role="navigation" class="navbar navbar-default">
-    <div class="navbar-header">
-        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a href="#" class="navbar-brand">SWEET STOP</a>
-    </div>
+  <div class="navbar-header">
+    <button type="button" data-target="#navbarCollapse_2" data-toggle="collapse" class="navbar-toggle">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a href="#" class="navbar-brand">SWEET STOP</a>
+  </div>
 
-    <div id="navbarCollapse" class="collapse navbar-collapse">
+    <div id="navbarCollapse_2" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-            <li ><a href="indexAdm.php">Inicio</a></li>
+
+          <!-- Administrador -->
+          <?php if ($_SESSION['tipo_usuario'] == 1):?>
+            <link rel="shortcut icon" href="img/favicon.ico">
+            <li><a href="../index.php">Inicio</a></li>
             <li class="active"><a href="registro_usuario.php">Usuarios</a></li>
 
             <li class="dropdown-submenu"><a href="#" tabindex="-1" data-toggle="dropdown">Menú</a>
-                <ul class="dropdown-menu">
-                    <li><a href="registro_categoria.php" tabindex="-1">Categorias</a></li>
-                    <li><a href="registro_producto.php" tabindex="-1">Productos</a></li>
-                    <li><a href="registro_promocion.php" tabindex="-1">Promociones</a></li>
-                </ul>
+              <ul class="dropdown-menu">
+                <li><a href="registro_categoria.php" tabindex="-1">Categorias</a></li>
+                <li><a href="registro_producto.php" tabindex="-1">Productos</a></li>
+                <li><a href="registro_promocion.php" tabindex="-1">Promociones</a></li>
+              </ul>
             </li>
 
             <li class="dropdown-submenu"><a href="#" tabindex="-1" data-toggle="dropdown">Reportes</a>
-                <ul class="dropdown-menu">
-                    <li><a href="reporte_cliente.php" tabindex="-1">Clientes</a></li>
-                    <li><a href="reporte_producto.php" tabindex="-1">Productos</a></li>
-                    <li><a href="reporte_venta.php" tabindex="-1">Ventas</a></li>
-                </ul>
+              <ul class="dropdown-menu">
+                <li><a href="reporte_cliente.php" tabindex="-1">Clientes</a></li>
+                <li><a href="reporte_producto.php" tabindex="-1">Productos</a></li>
+                <li><a href="reporte_venta.php" tabindex="-1">Ventas</a></li>
+              </ul>
             </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li data-toggle="modal" data-target="#loginModal">
-                <a href="../logout.php ">
-                    <span class="glyphicon glyphicon-log-out"></span> Cerrar sesión
-                </a>
-            </li>
+          <?php endif; ?>
+
+          <?php if ($_SESSION['tipo_usuario'] == 2):?>
+            <li class="active"><a href="#">Inicio</a></li>
+            <li><a href="vista/registro_cliente.php">Clientes</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Pedidos</a></li>
+            <li><a href="#">Reservas</a></li>
+            <li><a href="#">Ventas</a></li>
+          <?php endif; ?>
+
+
         </ul>
     </div>
 </nav>
@@ -97,6 +105,10 @@ if (!isset($_SESSION['loggedin'])){
                             </thead>
                             <tbody>
                             <?php
+                            include_once("../BD/conexion.php");
+                            $cnn= new conexion();
+                            $con =$cnn->conectar();
+                            mysqli_select_db($con,"restaurante");
                             $query_Mostrar = "SELECT u.idUsuario,u.nombre, u.apellidoPaterno, u.apellidoMaterno, u.ci, u.telefono, u.estado  FROM usuario as u INNER JOIN usuariorol as r on u.idUsuario=r.usuarioIdUsuario WHERE r.rolIdRol!=3";
                             //$query_Mostrar = "SELECT * FROM usuario  ";
                             $getAll = mysqli_query($con, $query_Mostrar);
@@ -112,13 +124,13 @@ if (!isset($_SESSION['loggedin'])){
                                         <?php
                                         switch ($row ['estado']) {
                                             case 'Habilitado':
-                                                echo " 
+                                                echo "
                                                <a class=\"btn btn-success btn-xs\">
                                                 <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"  ></span>";
                                                 break;
                                             case 'Deshabilitado':
 
-                                                echo " 
+                                                echo "
                                                <a class=\"btn btn-danger btn-xs\">
                                                 <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"  ></span>";
                                                 break;
@@ -153,18 +165,17 @@ if (!isset($_SESSION['loggedin'])){
                     </div>
                     <div class="box-content">
 
-                        <?php
-                        if (!empty($_GET['id'])) {
-                            $ID = $_GET['id'];
-                            $SELECCIONAR_USUARIO = "SELECT * FROM usuario WHERE idUsuario='$ID'";
-
-                            $QUERY_OBTENER_USUARIO = mysqli_query($con, $SELECCIONAR_USUARIO);
-                            while ($DATA = mysqli_fetch_array($QUERY_OBTENER_USUARIO, MYSQLI_ASSOC)):
-
-                                ?>
                                 <form id="usuario" class="form-horizontal" action="../controlador/editarUsuario.php"
                                       method="POST">
+                                      <?php
+                                      if (!empty($_GET['id'])) {
+                                          $ID = $_GET['id'];
+                                          $SELECCIONAR_USUARIO = "SELECT * FROM usuario WHERE idUsuario='$ID'";
 
+                                          $QUERY_OBTENER_USUARIO = mysqli_query($con, $SELECCIONAR_USUARIO);
+                                          while ($DATA = mysqli_fetch_array($QUERY_OBTENER_USUARIO, MYSQLI_ASSOC)):
+
+                                              ?>
                                     <div class="control-group">
                                         <div class="controls">
                                             <input name="id" class="input-xlarge form-control focused"
@@ -458,7 +469,7 @@ if (!isset($_SESSION['loggedin'])){
 <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../js/bootstrap.min.js"></script>
+
 <script type="text/javascript">
     $(document).ready(function() {
         $('#usu').DataTable( {

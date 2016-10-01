@@ -1,9 +1,6 @@
 <?php
-
-session_start();
-unset ($SESSION['usuario']);
-session_destroy();
-
-header('Location: http://localhost:8079/phpLogin/login.html');
-
+  session_start();
+  $_SESSION['loggedin'] = false;
+  session_destroy();
+  header('Location: ../index.php');
 ?>

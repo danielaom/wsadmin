@@ -1,11 +1,7 @@
 <?php
-
-$con = mysqli_connect("localhost","root","","restaurante");
-
-
-if (mysqli_connect_errno())
-{
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    exit();
+class conexion{
+	function conectar(){ //funcion para conectar a la base de datos
+		return mysqli_connect("localhost","root","root");
+	}
 }
 ?>

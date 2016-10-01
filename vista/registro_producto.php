@@ -1,12 +1,10 @@
 <?php
-
-$con = mysqli_connect("localhost", "root", "", "restaurante");
-
-session_start();
-if (!isset($_SESSION['loggedin'])) {
-    # code...
-    ?>
-<?php } ?>
+  session_start();
+  if (!isset($_SESSION['loggedin'])) {
+      # code...
+      header("location: ../index.php");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,24 +38,37 @@ if (!isset($_SESSION['loggedin'])) {
 
     <div id="navbarCollapse" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-            <li><a href="indexAdm.php">Inicio</a></li>
-            <li class="active"><a href="registro_usuario.php">Usuarios</a></li>
+          <!-- Administrador -->
+          <?php if ($_SESSION['tipo_usuario'] == 1):?>
+            <link rel="shortcut icon" href="img/favicon.ico">
+            <li><a href="../index.php">Inicio</a></li>
+            <li><a href="registro_usuario.php">Usuarios</a></li>
 
-            <li class="dropdown-submenu"><a href="#" tabindex="-1" data-toggle="dropdown">Menú</a>
-                <ul class="dropdown-menu">
-                    <li><a href="registro_categoria.php" tabindex="-1">Categorias</a></li>
-                    <li><a href="registro_producto.php" tabindex="-1">Productos</a></li>
-                    <li><a href="registro_promocion.php" tabindex="-1">Promociones</a></li>
-                </ul>
+            <li class="active" class="dropdown-submenu"><a href="#" tabindex="-1" data-toggle="dropdown">Menú</a>
+              <ul class="dropdown-menu">
+                <li><a href="registro_categoria.php" tabindex="-1">Categorias</a></li>
+                <li class="active"><a href="registro_producto.php" tabindex="-1">Productos</a></li>
+                <li><a href="registro_promocion.php" tabindex="-1">Promociones</a></li>
+              </ul>
             </li>
 
             <li class="dropdown-submenu"><a href="#" tabindex="-1" data-toggle="dropdown">Reportes</a>
-                <ul class="dropdown-menu">
-                    <li><a href="reporte_cliente.php" tabindex="-1">Clientes</a></li>
-                    <li><a href="reporte_producto.php" tabindex="-1">Productos</a></li>
-                    <li><a href="reporte_venta.php" tabindex="-1">Ventas</a></li>
-                </ul>
+              <ul class="dropdown-menu">
+                <li><a href="reporte_cliente.php" tabindex="-1">Clientes</a></li>
+                <li><a href="reporte_producto.php" tabindex="-1">Productos</a></li>
+                <li><a href="reporte_venta.php" tabindex="-1">Ventas</a></li>
+              </ul>
             </li>
+          <?php endif; ?>
+
+          <?php if ($_SESSION['tipo_usuario'] == 2):?>
+            <li class="active"><a href="#">Inicio</a></li>
+            <li><a href="vista/registro_cliente.php">Clientes</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Pedidos</a></li>
+            <li><a href="#">Reservas</a></li>
+            <li><a href="#">Ventas</a></li>
+          <?php endif; ?>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li data-toggle="modal" data-target="#loginModal">
@@ -95,7 +106,11 @@ if (!isset($_SESSION['loggedin'])) {
                             </thead>
                             <tbody>
                             <?php
-                            $query_Mostrar = "SELECT p.Nombre,i.imagen, p.precio,c.nombre,p.estado  FROM imagen as i INNER JOIN producto as p on i.idImagen=p.imagenIdImagen INNER JOIN categoria as c on p.categoriaIdCategoria=c.idCategoria ";
+                            include_once("../BD/conexion.php");
+                            $cnn= new conexion();
+                            $con =$cnn->conectar();
+                            mysqli_select_db($con,"restaurante");
+                            $query_Mostrar = "SELECT * FROM imagen ";
 
                             $getAll = mysqli_query($con, $query_Mostrar);
                             while ($row = mysqli_fetch_array($getAll, MYSQLI_ASSOC)):
@@ -109,13 +124,13 @@ if (!isset($_SESSION['loggedin'])) {
                                         <?php
                                         switch ($row ['estado']) {
                                             case 'Habilitado':
-                                                echo " 
+                                                echo "
                                                <a class=\"btn btn-success btn-xs\">
                                                 <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"  ></span>";
                                                 break;
                                             case 'Deshabilitado':
 
-                                                echo " 
+                                                echo "
                                                <a class=\"btn btn-danger btn-xs\">
                                                 <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"  ></span>";
                                                 break;
@@ -156,17 +171,19 @@ if (!isset($_SESSION['loggedin'])) {
                     </div>
                     <div class="box-content">
 
-                        <?php
-                        if (!empty($_GET['id'])) {
-                            $ID = $_GET['id'];
-                            $SELECCIONAR_PRODUCTO = "SELECT * FROM producto WHERE idProducto='$ID'";
 
-                            $QUERY_OBTENER_Producto = mysqli_query($con, $SELECCIONAR_PRODUCTO);
-                            while ($DATA = mysqli_fetch_array($QUERY_OBTENER_USUARIO, MYSQLI_ASSOC)):
-
-                                ?>
                                 <form id="producto" class="form-horizontal" action="../controlador/editarProducto.php"
                                       method="POST">
+
+                                      <?php
+                                      if (!empty($_GET['id'])) {
+                                          $ID = $_GET['id'];
+                                          $SELECCIONAR_PRODUCTO = "SELECT * FROM producto WHERE idProducto='$ID'";
+
+                                          $QUERY_OBTENER_Producto = mysqli_query($con, $SELECCIONAR_PRODUCTO);
+                                          while ($DATA = mysqli_fetch_array($QUERY_OBTENER_USUARIO, MYSQLI_ASSOC)):
+
+                                              ?>
 
                                     <div class="control-group">
                                         <div class="controls">
@@ -332,9 +349,7 @@ if (!isset($_SESSION['loggedin'])) {
                                     <div class="form-actions">
                                         <button type="submit" id="btnvalidar" class="btn btn-primary">Registrar
                                         </button>
-                                        <button type="button" class="btn btn-danger"
-                                                onclick= return false;">Cancelar
-                                        </button>
+
                                     </div>
                                 </fieldset>
                             </form>

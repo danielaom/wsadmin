@@ -1,9 +1,8 @@
-
 <?php
-
-$con = mysqli_connect("localhost","root","","restaurante");
-
-
+include_once("../BD/conexion.php");
+$cnn= new conexion();
+$con =$cnn->conectar();
+mysqli_select_db($con,"restaurante");
 if (mysqli_connect_errno())
 {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();

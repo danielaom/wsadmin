@@ -28,7 +28,7 @@ if (!isset($_SESSION['loggedin'])){
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a href="#" class="navbar-brand">Logotipo</a>
+			<a href="#" class="navbar-brand">SWEET STOP</a>
 		</div>
 
 		<div id="navbarCollapse" class="collapse navbar-collapse">
@@ -124,48 +124,7 @@ if (!isset($_SESSION['loggedin'])){
 	<?php
 } else {
 	# code...
-	$EVENTO = $_SESSION['loggedin'];
-	$con = mysqli_connect("localhost", "root", "", "restaurante") or die("Error ");
-
-
-
-
-
-
-
-	/*require('conexion.php');
-
-    session_start();*/
-
-
-	/*
-    if(isset($_SESSION["id_usuario"])){
-        header("Location: inicio.php");
-    }
-
-    if(!empty($_POST))
-    {
-        $usuario = mysqli_real_escape_string($mysqli,$_POST['usuario']);
-        $password = mysqli_real_escape_string($mysqli,$_POST['password']);
-        $error = '';
-
-        $sha1_pass = sha1($password);
-
-        $sql = "SELECT idUsuarioRol, rolIdRol FROM usuariorol WHERE usuario = '$usuario' AND password = '$password'";
-        $result=$mysqli->query($sql);
-        $rows = $result->num_rows;
-
-        if($rows > 0) {
-            $row = $result->fetch_assoc();
-            $_SESSION['id_usuario'] = $row['idUsuarioRol'];
-            $_SESSION['tipo_usuario'] = $row['rolIdRol'];
-
-            header("location: inicio.php");
-        } else {
-            $error = "El nombre o contraseña son incorrectos";
-        }
-    }*/
-	?>
+	$EVENTO = $_SESSION['loggedin']; ?>
 
 	<!DOCTYPE html>
 	<html lang="en">
@@ -187,22 +146,22 @@ if (!isset($_SESSION['loggedin'])){
 
 	<nav role="navigation" class="navbar navbar-default">
 		<div class="navbar-header">
-			<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+			<button type="button" data-target="#navbarCollapse_1" data-toggle="collapse" class="navbar-toggle">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a href="#" class="navbar-brand">Logotipo</a>
+			<a href="#" class="navbar-brand">SWEET STOP</a>
 		</div>
 
-		<div id="navbarCollapse" class="collapse navbar-collapse">
+		<div id="navbarCollapse_1" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
 
 				<!-- Administrador -->
 				<?php if ($_SESSION['tipo_usuario'] == 1):?>
 					<link rel="shortcut icon" href="img/favicon.ico">
-					<li class="active"><a href="../index.php">Inicio</a></li>
+					<li class="active"><a href="index.php">Inicio</a></li>
 					<li><a href="vista/registro_usuario.php">Usuarios</a></li>
 
 					<li class="dropdown-submenu"><a href="#" tabindex="-1" data-toggle="dropdown">Menú</a>

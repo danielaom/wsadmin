@@ -1,8 +1,8 @@
 <?php
-
-$con = mysqli_connect("localhost","root","","restaurante");
-
-
+include_once("../BD/conexion.php");
+$cnn= new conexion();
+$con =$cnn->conectar();
+mysqli_select_db($con,"restaurante");
 if (mysqli_connect_errno())
 {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -50,7 +50,7 @@ if (mysqli_connect_errno())
             $USRAPELLIDO =substr( $DATA['apellidoPaterno'],0,2);
 
        $USUARIO=$USRNOMBRE.$USRAPELLIDO;
-            $QUERY_INSERTROL= "insert into usuariorol(idUsuarioRol,usuario,password,usuarioIdUsuario,rolIdRol) 
+            $QUERY_INSERTROL= "insert into usuariorol(idUsuarioRol,usuario,password,usuarioIdUsuario,rolIdRol)
                             VALUES ('','$USUARIO','$PASS)','$ID','$rol')";
 
             if (!mysqli_query($con,$QUERY_INSERTROL)){
@@ -83,7 +83,3 @@ if (mysqli_connect_errno())
     mysqli_close($con);
 }
 ?>
-
-
-
-
