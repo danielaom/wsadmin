@@ -76,33 +76,44 @@ if (!isset($_SESSION['loggedin'])) {
         <div class="col-md-5">
             <h1>Registro de promoción</h1>
         </div>
+
+
+
+
+
+
+
     </div>
     <form action="../controlador/registroPromocion.php" method="POST">
       <div class="col-md-4">
         <h3>Datos promoción</h3>
+          <div class="form-group">
+              <label>Codigo</label>
+              <input type="text" name="codigo" class="form-control" placeholder="Codigo">
+          </div>
         <div class="form-group">
             <label>Nombre</label>
-            <input type="email" class="form-control" placeholder="Nombre">
+            <input type="text" name="nombre" class="form-control" placeholder="Nombre">
         </div>
         <div class="form-group">
-            <label>Regalo</label>
-            <input type="email" class="form-control" placeholder="Regalo">
+            <label>Descripcion</label>
+            <input type="text" name="descripcion" class="form-control" placeholder="Regalo">
         </div>
         <div class="form-group">
             <label>Precio</label>
-            <input type="email" class="form-control" placeholder="Precio">
+            <input type="text" name="precio" class="form-control" placeholder="Precio">
         </div>
         <div class="form-group">
             <label>Fecha inicio</label>
-            <input type="email" class="form-control" placeholder="Fecha inicio">
+            <input type="text"  name="fechaInicio" class="form-control" placeholder="Fecha inicio">
         </div>
         <div class="form-group">
             <label>Fecha fin</label>
-            <input type="email" class="form-control" placeholder="Fecha fin">
+            <input type="text" name="fechaFin" class="form-control" placeholder="Fecha fin">
         </div>
         <div class="form-group">
             <label>Imagen</label>
-            <input type="file" id="exampleInputFile">
+            <input type="file" name="imagen" id="exampleInputFile">
             <p class="help-block">Ingrese la imagen adjunta a la promocion.</p>
         </div>
         <div class="col-md-offset-8 col-md-4">
@@ -137,7 +148,7 @@ if (!isset($_SESSION['loggedin'])) {
                     <td><?php echo '<br> <img  width="36" height="36" src='.$row["imagen"].'>'; ?></td>
                     <td><?php echo $row ['nombre']; ?></td>
                     <td><?php echo $row ['precio']; ?></td>
-                    <td><input type="text" class="form-control" placeholder="Cantidad" name="cantidad"></td>
+                    <td><input type="text" class="form-control" placeholder="Cantidad" name="cantidad[]"></td>
                 </tr>
             <?php endwhile; ?>
             </tbody>

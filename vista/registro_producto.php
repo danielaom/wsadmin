@@ -79,6 +79,74 @@
         </ul>
     </div>
 </nav>
+<?php
+if (!empty($_GET['show'])) {
+    echo "<script type='text/javascript'>
+        $(document).ready(function(){
+        $('#loginModal').modal('show');
+        }); </script>";
+
+    $ID_SHOW = $_GET['show'];
+}
+
+?>
+<style>
+    #mdialTamanio{
+        width: 25% !important;
+        height: 30% !important;
+    }
+</style>
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+    <div class="modal-dialog" id="mdialTamanio">
+        <?php
+            include_once("../BD/conexion.php");
+            $cnn= new conexion();
+            $con =$cnn->conectar();
+            mysqli_select_db($con,"restaurante");
+            $SELECCIONAR_PRODUCTO = "SELECT * FROM producto WHERE idProducto='$ID_SHOW'";
+            $QUERY_OBTENER_Producto = mysqli_query($con, $SELECCIONAR_PRODUCTO);
+
+            while($DATA = mysqli_fetch_array($QUERY_OBTENER_Producto, MYSQLI_ASSOC)):  ?>
+        <div class="modal-content">
+            <form id="loginForm" method="POST" class="form-horizontal" action="controlador/inicioSesion.php">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <div class="row">
+                        <div class="card"  >
+                            <a class="img-card" href="http://www.fostrap.com/">
+                                <img src="<?php echo $DATA['imagen'];?>" />
+                            </a>
+                            <br />
+                            <div class="card-content" id="mdialTamanio">
+                                <h4 class="card-title">
+                                    <a href="http://www.fostrap.com/">
+                                        <?php echo $DATA['nombre'];?>
+                                    </a>
+                                </h4>
+                                <div class="">
+                                    <?php echo $DATA['descripcion'];?>
+                                </div>
+                            </div>
+                            <!--<div class="card-read-more">
+                                <a class="btn btn-link btn-block" href="http://www.fostrap.com/">
+                                    Read More
+
+                                </a>
+                            </div>-->
+                        </div>
+                </div>
+            </form>
+
+            <div style = "font-size:16px; color:#cc0000;"><?php echo isset($error) ? utf8_decode($error) : '' ; ?></div>
+        </div>
+        <?php endwhile; mysqli_close($con) ?>
+    </div>
+</div>
+
+
+
+
+
 <div class="container">
     <div class="row">
         <div class="col-md-8">
@@ -121,7 +189,7 @@
                                     <td><?php echo $row ['nombre']; ?></td>
                                     <td><?php echo '<br> <img  width="56" height="56" src='.$row["imagen"].'>'; ?></td>
                                     <td><?php echo $row ['precio']; ?></td>
-                                    <td><?php echo $row ['categoriIdCategoria']; ?></td>
+                                    <td><?php echo $row ['categoriaIdCategoria']; ?></td>
                                     <td>
                                         <?php
                                         switch ($row ['estado']) {
@@ -144,8 +212,9 @@
                                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 
                                         </a>
-                                        <a class="btn btn-warning btn-xs" href="?id=<?php echo $row ['idProducto']; ?>">
-                                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+
+                                        <a class="btn btn-primary btn-xs" href="?show=<?php echo $row ['idProducto']; ?>">
+                                            <span data-toggle="modal" data-target="#loginModal" class="glyphicon glyphicon-search" aria-hidden="true"></span>
 
                                         </a>
 
@@ -224,7 +293,7 @@
                                   $queryRoles="SELECT idCategoria,nombre FROM categoria";
                                   $getAll = mysqli_query($con,$queryRoles);
                                   while($row = mysqli_fetch_array($getAll, MYSQLI_ASSOC)){ ?>
-                                      <option value="<?php echo $row['idCategoria']; ?>" <?php if($row['idCategoria']==$DATA['categoriIdCategoria']): ?> selected="selected" <?php endif; ?>><?php echo $row['nombre']; ?></option>
+                                      <option value="<?php echo $row['idCategoria']; ?>" <?php if($row['idCategoria']==$DATA['categoriaIdCategoria']): ?> selected="selected" <?php endif; ?>><?php echo $row['nombre']; ?></option>
                                   <?php }?>
                               </select>
                           </div>

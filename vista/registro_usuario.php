@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../js/bootstrapValidator.js"></script>
 </head>
 
-<body bgcolor="#EBEFF1">
+<body>
 
 <nav role="navigation" class="navbar navbar-default">
   <div class="navbar-header">
@@ -36,7 +36,6 @@
     </button>
     <a href="#" class="navbar-brand">SWEET STOP</a>
   </div>
-
     <div id="navbarCollapse_2" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
 
@@ -65,7 +64,7 @@
 
           <?php if ($_SESSION['tipo_usuario'] == 2):?>
             <li class="active"><a href="#">Inicio</a></li>
-            <li><a href="vista/registro_cliente.php">Clientes</a></li>
+            <li><a href="registro_cliente.php">Clientes</a></li>
             <li><a href="#">Productos</a></li>
             <li><a href="#">Pedidos</a></li>
             <li><a href="#">Reservas</a></li>
@@ -83,7 +82,7 @@
             <div class="row-fluid sortable">
                 <div class="box span12">
                     <div class="box-header" data-original-title>
-                        <h2><i class="halflings-icon user"></i><span class="break"></span>Lista usuarios</h2>
+                        <h4><i class="halflings-icon user"></i><span class="break"></span>Lista usuarios</h4>
                         <div class="box-icon">
 
                             <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>

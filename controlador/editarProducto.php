@@ -23,8 +23,8 @@ if (mysqli_connect_errno())
       # code...
       $choose = $_POST['imagen'];
 
-      $image = "http://localhost:8888/wsadmin/img/".$choose;
-      $sql_query = "UPDATE producto SET nombre='$nombre',descripcion='$descripcion',precio='$precio',categoriIdCategoria='$categoria',imagen='$imagen',estado='$estado' WHERE idProducto='$ID'";
+      $image = "http://localhost/sw/img/".$choose;
+      $sql_query = "UPDATE producto SET nombre='$nombre',descripcion='$descripcion',precio='$precio',categoriaIdCategoria='$categoria',imagen='$imagen',estado='$estado' WHERE idProducto='$ID'";
 
       if (!mysqli_query($con,$sql_query)) {
           echo "Error al Actualizar";
@@ -33,7 +33,7 @@ if (mysqli_connect_errno())
       mysqli_close($con);
     } else {
       # code...
-      $sql_query = "UPDATE producto SET nombre='$nombre',descripcion='$descripcion',precio='$precio',categoriIdCategoria='$categoria',estado='$estado' WHERE idProducto='$ID'";
+      $sql_query = "UPDATE producto SET nombre='$nombre',descripcion='$descripcion',precio='$precio',categoriaIdCategoria='$categoria',estado='$estado' WHERE idProducto='$ID'";
       if (!mysqli_query($con,$sql_query)) {
           echo "Error al Actualizar imagen";
       }

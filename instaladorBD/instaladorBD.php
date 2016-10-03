@@ -52,12 +52,12 @@
         # code...
         echo "<br><br> -- TABLA USUARIO CREADA --";
         $ADD_USUARIO_TEST = "INSERT INTO usuario(idUsuario,nombre,apellidoPaterno,apellidoMaterno,ci,telefono,correo,direccion,estado)
-                             VALUES ('','Juan','Perez','Garcia','E-1124322','4232122','juan@gmail.com','Av. America y Av Libertadores','activo'),
-                                    ('','Manuel','Caceres','Leon','4124322','4223142','juan@gmail.com','Av. America y Av Libertadores','activo'),
-                                    ('','Noel','Suarez','Lucha','1124322-1A','4523412','juan@gmail.com','Av. America y Av Libertadores','activo'),
-                                    ('','Lucia','Torrez','Torrico','E-1124322','4567565','juan@gmail.com','Av. America y Av Libertadores','activo'),
-                                    ('','Pamela','Galindo','Gomez','1124322-3R','4678795','juan@gmail.com','Av. America y Av Libertadores','activo'),
-                                    ('','Roberto','Parada','Perez','E-1124322','4567658','juan@gmail.com','Av. America y Av Libertadores','activo')";
+                             VALUES ('','Juan','Perez','Garcia','E-1124322','4232122','juan@gmail.com','Av. America y Av Libertadores','Habilitado'),
+                                    ('','Manuel','Caceres','Leon','4124322','4223142','juan@gmail.com','Av. America y Av Libertadores','Habilitado'),
+                                    ('','Noel','Suarez','Lucha','1124322-1A','4523412','juan@gmail.com','Av. America y Av Libertadores','Habilitado'),
+                                    ('','Lucia','Torrez','Torrico','E-1124322','4567565','juan@gmail.com','Av. America y Av Libertadores','Habilitado'),
+                                    ('','Pamela','Galindo','Gomez','1124322-3R','4678795','juan@gmail.com','Av. America y Av Libertadores','Habilitado'),
+                                    ('','Roberto','Parada','Perez','E-1124322','4567658','juan@gmail.com','Av. America y Av Libertadores','Habilitado')";
         if (mysqli_query($con, $ADD_USUARIO_TEST)) {
           # code...
           echo "<br> -- USUARIOS INSERTADOS -- <br>";
@@ -122,23 +122,69 @@
         fecha VARCHAR(18),
         estado VARCHAR(18),
         imagen TEXT,
-        categoriIdCategoria INT,
+        categoriaIdCategoria INT,
         PRIMARY KEY(idProducto)
       )";
 
       if (mysqli_query($con,$TB_PRODUCTO)) {
         # code...
-        echo "<br><br> -- TABLA PRODCUTO CREADA --";
-        $ADD_PRODUCTO_TEST = "INSERT INTO producto(idProducto,nombre,descripcion,precio,fecha,estado,imagen,categoriIdCategoria)
-                              VALUES ('','Lemteco','Muy lenteja','00','0000-00-00','Habilitado','http://localhost:8888/wsadmin/img/ic_comteco.png','1')";
+        echo "<br> -- TABLA PRODUCTO CREADA --";
+        $ADD_PRODUCTO_TEST = "INSERT INTO producto(idProducto,nombre,descripcion,precio,fecha,estado,imagen,categoriaIdCategoria)
+                              VALUES ('','Lemteco','Muy lenteja','00','0000-00-00','Habilitado','http://localhost/sw/img/ic_comteco.png','1'),
+                                     ('','Jugo de frutilla','Muy lenteja','00','0000-00-00','Habilitado','http://localhost/sw/img/cafe.png','2'),
+                                     ('','Lemteco','Muy lenteja','00','0000-00-00','Habilitado','http://localhost/sw/img/pan.jpg','3'),
+                                     ('','Lemteco','Muy lenteja','00','0000-00-00','Habilitado','http://localhost/sw/img/jugofrutilla.png','1')";
 
         if (mysqli_query($con, $ADD_PRODUCTO_TEST)) {
           # code...
-          echo "<br> -- PRODUCTOS INSERTADOS -- <br>";
+          echo "<br> -- PRODUCTOS INSERTADOS -- ";
         }
       }
-    }
 
+
+      
+    /** TABLA PROMOCION **/
+    $TB_PROMOCION = "CREATE TABLE promocion (
+        idPromocion INT NOT NULL AUTO_INCREMENT,
+        codigo VARCHAR(24),
+        nombre VARCHAR(24),
+        descripcion TEXT,
+        precio DECIMAL(18,2),
+        fechaInicio DATE,
+        fechaFin DATE,
+        imagen TEXT,
+        fecha DATETIME,
+        estado VARCHAR(18),
+        PRIMARY KEY(idPromocion)
+      )";
+
+    if (mysqli_query($con,$TB_PROMOCION)) {
+      # code...
+      echo "<br> -- TABLA PROMOCION CREADA --";
+      $ADD_PROMOCION_TEST = "INSERT INTO promocion(idPromocion,codigo,nombre,descripcion,precio,fechaInicio,fechaFin,imagen,fecha,estado)
+                              VALUES ('','DP-01','Dia dde la madre','mamá','150','03/10/2016','16/10/2016','http://localhost/sw/img/promocion.jpg','0000-00-00','Habilitado')";
+
+      if (mysqli_query($con, $ADD_PROMOCION_TEST)) {
+        # code...
+        echo "<br> -- PROMOCION INSERTADOS -- ";
+      }
+    }
+      /** TABLA PRODUCTO PROMOCION **/
+      $TB_PRODUCTO_PROMOCION = "CREATE TABLE productoPromocion (
+        idProductoPromocion INT NOT NULL AUTO_INCREMENT,
+        cantidad VARCHAR(24),
+        promocionIdPromocion INT,
+        productoIdProducto INT,
+        PRIMARY KEY(idProductoPromocion)
+      )";
+
+      if (mysqli_query($con,$TB_PRODUCTO_PROMOCION)) {
+        # code...
+        echo "<br> -- TABLA PRODUCTO PROMOCION CREADA --";
+
+      }
+  }
+    
     mysqli_close($con);
   }
 

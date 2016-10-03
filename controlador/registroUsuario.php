@@ -21,8 +21,6 @@ if (mysqli_connect_errno())
     $QUERY_VERIFY = mysqli_query($con,$VERIFY_USER);
     $TAM = mysqli_num_rows($QUERY_VERIFY);
 
-
-
     function randomPassword($length=6) {
         $char = "abcdefghijklmnopqrstuvwyxzABCDEFGHIJKLMNOPQRSTUVWZXY0987654321";
         return substr(str_shuffle($char),0,$length);
@@ -51,7 +49,7 @@ if (mysqli_connect_errno())
 
        $USUARIO=$USRNOMBRE.$USRAPELLIDO;
             $QUERY_INSERTROL= "insert into usuariorol(idUsuarioRol,usuario,password,usuarioIdUsuario,rolIdRol)
-                            VALUES ('','$USUARIO','$PASS)','$ID','$rol')";
+                            VALUES ('','$USUARIO','$PASS','$ID','$rol')";
 
             if (!mysqli_query($con,$QUERY_INSERTROL)){
                 echo "Error al insertar Usuario-Rol";

@@ -86,36 +86,6 @@ if (!isset($_SESSION['loggedin'])){
 					</div>
 				</form>
 
-				<!--<form id="loginForm" method="POST" class="form-horizontal" action="<?php /*$_SERVER['PHP_SELF']; */?>">
-
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">Inicio de Sesión</h4>
-				</div>
-				<div class="modal-body">
-						<div class="form-group">
-							<label class="col-md-3 control-label">Usuario</label>
-							<div class="col-md-7">
-								<input type="text" class="form-control" name="usuario" id="usuario" />
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-md-3 control-label">Contrasenia</label>
-							<div class="col-md-7">
-								<input type="password" class="form-control" name="password" id="password" />
-							</div>
-						</div>
-
-
-				</div>
-				<div class="modal-footer">
-					<div class="form-group">
-						<div class="col-md-offset-5 col-md-5 ">
-							 <button type="submit" class="btn btn-default" name="restaurant" value="restaurant">Iniciar sesion</button>
-						</div>
-					</div>
-				</div>
-				</form>-->
 				<div style = "font-size:16px; color:#cc0000;"><?php echo isset($error) ? utf8_decode($error) : '' ; ?></div>
 			</div>
 		</div>
