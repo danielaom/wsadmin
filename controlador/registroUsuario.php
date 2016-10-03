@@ -65,7 +65,7 @@ if (mysqli_connect_errno())
                     'Content-type: text/html; charset=utf-8';
 
                 if (mail($to,$subject,$MENSAJE,$header)) {
-                    echo "email enviado!";
+                    //echo "email enviado!";
                 } else {
                     echo "error al enviar email!";
                 }

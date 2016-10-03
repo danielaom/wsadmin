@@ -156,106 +156,95 @@
             <h1>Nuevo usuario</h1>
             <div class="row-fluid sortable">
                 <div class="box span12">
-                    <div class="box-header" data-original-title>
+                  <div class="box-header" data-original-title>
                         <h2><i class="halflings-icon edit"></i><span class="break"></span>Ingresar datos del usuario
                         </h2>
                         <div class="box-icon">
                             <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
                         </div>
                     </div>
+                    <?php
+                      if (!empty($_GET['id'])) {
+                        $ID = $_GET['id'];
+                          $SELECCIONAR_USUARIO = "SELECT * FROM usuario WHERE idUsuario='$ID'";
+                          $QUERY_OBTENER_USUARIO = mysqli_query($con, $SELECCIONAR_USUARIO);
+                          while ($DATA = mysqli_fetch_array($QUERY_OBTENER_USUARIO, MYSQLI_ASSOC)):
+                    ?>
                     <div class="box-content">
+                      <form id="usuario" class="form-horizontal" action="../controlador/editarUsuario.php" method="POST">
+                        <fieldset>
+                        <div class="control-group">
+                          <div class="controls">
+                            <input name="id" class="input-xlarge form-control focused" id="focusedInput" type="hidden" placeholder="Ingrese nombre…" value="<?php echo $DATA['idUsuario']; ?>">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label">Nombre</label>
+                          <div class="controls">
+                            <input name="nombre" class="input-xlarge form-control focused" id="nombre" type="text" placeholder="Ingrese nombre…" value="<?php echo $DATA['nombre']; ?>">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label">Apellido Paterno</label>
+                          <div class="controls">
+                            <input name="ap_paterno" class="input-xlarge form-control focused" id="focusedInput" type="text" placeholder="Ingrese apellido paterno…" value="<?php echo $DATA['apellidoPaterno']; ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Apellido Materno</label>
+                            <div class="controls">
+                                <input name="ap_materno" class="input-xlarge form-control focused"
+                                       id="focusedInput" type="text"
+                                       placeholder="Ingrese apellido materno…"
+                                       value="<?php echo $DATA['apellidoMaterno']; ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">C&eacutedula de identidad</label>
+                            <div class="controls">
+                                <input name="ci" class="input-xlarge form-control focused"
+                                       id="focusedInput" type="text"
+                                       placeholder="Ingrese numero de carnet…"
+                                       value="<?php echo $DATA['ci']; ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Tel&eacute;fono</label>
+                            <div class="controls">
+                                <input name="telefono" class="input-xlarge form-control focused"
+                                       id="focusedInput" type="text" placeholder="Ingrese telefono…"
+                                       value="<?php echo $DATA['telefono']; ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="selectError3">Estado</label>
+                            <div class="controls">
+                                <select name="estado" id="selectError3" class="form-control">
+                                    <?php
+                                    $estado = $DATA['estado'];
+                                    if ($estado == 'Habilitado') {
+                                        echo '  <option selected="selected" value="Habilitado">Habilitado</option>';
+                                        echo '  <option value="Deshabilitado">Deshabilitado</option> ';
+                                    } else {
+                                        echo '  <option selected="selected" value="Deshabilitado">Deshabilitado</option> ';
+                                        echo '  <option  value="Habilitado">Habilitado</option>';
 
-                                <form id="usuario" class="form-horizontal" action="../controlador/editarUsuario.php"
-                                      method="POST">
-                                      <?php
-                                      if (!empty($_GET['id'])) {
-                                          $ID = $_GET['id'];
-                                          $SELECCIONAR_USUARIO = "SELECT * FROM usuario WHERE idUsuario='$ID'";
-
-                                          $QUERY_OBTENER_USUARIO = mysqli_query($con, $SELECCIONAR_USUARIO);
-                                          while ($DATA = mysqli_fetch_array($QUERY_OBTENER_USUARIO, MYSQLI_ASSOC)):
-
-                                              ?>
-                                    <div class="control-group">
-                                        <div class="controls">
-                                            <input name="id" class="input-xlarge form-control focused"
-                                                   id="focusedInput" type="hidden" placeholder="Ingrese nombre…"
-                                                   value="<?php echo $DATA['idUsuario']; ?>">
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group">
-                                        <label class="control-label">Nombre</label>
-                                        <div class="controls">
-                                            <input name="nombre" class="input-xlarge form-control focused"
-                                                   id="nombre" type="text" placeholder="Ingrese nombre…"
-                                                   value="<?php echo $DATA['nombre']; ?>">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label">Apellido Paterno</label>
-                                        <div class="controls">
-                                            <input name="ap_paterno" class="input-xlarge form-control focused"
-                                                   id="focusedInput" type="text"
-                                                   placeholder="Ingrese apellido paterno…"
-                                                   value="<?php echo $DATA['apellidoPaterno']; ?>">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label">Apellido Materno</label>
-                                        <div class="controls">
-                                            <input name="ap_materno" class="input-xlarge form-control focused"
-                                                   id="focusedInput" type="text"
-                                                   placeholder="Ingrese apellido materno…"
-                                                   value="<?php echo $DATA['apellidoMaterno']; ?>">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="control-label">C&eacutedula de identidad</label>
-                                        <div class="controls">
-                                            <input name="ci" class="input-xlarge form-control focused"
-                                                   id="focusedInput" type="text"
-                                                   placeholder="Ingrese numero de carnet…"
-                                                   value="<?php echo $DATA['ci']; ?>">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label">Tel&eacute;fono</label>
-                                        <div class="controls">
-                                            <input name="telefono" class="input-xlarge form-control focused"
-                                                   id="focusedInput" type="text" placeholder="Ingrese telefono…"
-                                                   value="<?php echo $DATA['telefono']; ?>">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="control-label" for="selectError3">Estado</label>
-                                        <div class="controls">
-                                            <select name="estado" id="selectError3" class="form-control">
-                                                <?php
-                                                $estado = $DATA['estado'];
-                                                if ($estado == 'Habilitado') {
-                                                    echo '  <option selected="selected" value="Habilitado">Habilitado</option>';
-                                                    echo '  <option value="Deshabilitado">Deshabilitado</option> ';
-                                                } else {
-                                                    echo '  <option selected="selected" value="Deshabilitado">Deshabilitado</option> ';
-                                                    echo '  <option  value="Habilitado">Habilitado</option>';
-
-                                                }
-                                                ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-actions">
-                                        <button type="submit" class="btn btn-primary">Actualizar</button>
-                                        <button type="reset" class="btn btn-danger">Cancelar</button>
-                                    </div>
-                                    </fieldset>
-                                </form>
-                            <?php endwhile;
-                        } else { ?>
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Actualizar</button>
+                            <button type="reset" class="btn btn-danger">Cancelar</button>
+                        </div>
+                      </fieldset>
+                      </form>
+                    </div>
+                    <?php endwhile; }
+                      else {
+                    ?>
+                          <div class="box-content">
                             <form id="usuario" class="form-horizontal" action="../controlador/registroUsuario.php"
                                   method="POST">
 
@@ -329,13 +318,13 @@
                                     </div>
                                 </fieldset>
                             </form>
-                        <?php }
-                        if (!empty($_GET['error'])) {
+                          </div>
+                          <?php }
+                          if (!empty($_GET['error'])) {
 
-                            echo "<font color='red'>Usuario existente</font>";
+                              echo "<font color='red'>Usuario existente</font>";
 
-                        } ?>
-                    </div>
+                          } ?>
                 </div><!--/span-->
 
             </div>

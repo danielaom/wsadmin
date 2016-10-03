@@ -78,12 +78,12 @@
         # code...
         echo "<br><br> -- TABLA USUARIOROl CREADA --";
         $ADD_USUARIOROL_TEST = "INSERT INTO usuariorol(idUsuarioRol,usuario,password,usuarioIdUsuario,rolIdRol)
-                                VALUES ('','jupe1124','md5(papaya)','1','1'),
-                                       ('','maca4124','md5(papaya)','2','2'),
-                                       ('','nosu1124','md5(papaya)','3','2'),
-                                       ('','luto4322','md5(papaya)','4','3'),
-                                       ('','paga4322','md5(papaya)','5','3'),
-                                       ('','ropa1124','md5(papaya)','6','3')";
+                                VALUES ('','jupe1124','papaya','1','1'),
+                                       ('','maca4124','papaya','2','2'),
+                                       ('','nosu1124','papaya','3','2'),
+                                       ('','luto4322','papaya','4','3'),
+                                       ('','paga4322','papaya','5','3'),
+                                       ('','ropa1124','papaya','6','3')";
 
         if (mysqli_query($con, $ADD_USUARIOROL_TEST)) {
           # code...
@@ -119,9 +119,9 @@
         nombre VARCHAR(24),
         descripcion VARCHAR(28),
         precio DECIMAL(18,2),
-        fecha DATETIME,
+        fecha VARCHAR(18),
         estado VARCHAR(18),
-        imagen LONGBLOB,
+        imagen TEXT,
         categoriIdCategoria INT,
         PRIMARY KEY(idProducto)
       )";
@@ -129,18 +129,13 @@
       if (mysqli_query($con,$TB_PRODUCTO)) {
         # code...
         echo "<br><br> -- TABLA PRODCUTO CREADA --";
-        // $ADD_PRODUCTO_TEST = "INSERT INTO producto(idProducto,nombre,descripcion,precio,fecha,estado,imagen,categoriIdCategoria)
-        //                       VALUES ('','jupe1124','md5(papaya)'),
-        //                              ('','maca4124','md5(papaya)','2','2'),
-        //                              ('','nosu1124','md5(papaya)','3','2'),
-        //                              ('','luto4322','md5(papaya)','4','3'),
-        //                              ('','paga4322','md5(papaya)','5','3'),
-        //                              ('','ropa1124','md5(papaya)','6','3')";
-        //
-        // if (mysqli_query($con, $ADD_PRODUCTO_TEST)) {
-        //   # code...
-        //   echo "<br> -- PRODUCTOS INSERTADOS -- <br>";
-        // }
+        $ADD_PRODUCTO_TEST = "INSERT INTO producto(idProducto,nombre,descripcion,precio,fecha,estado,imagen,categoriIdCategoria)
+                              VALUES ('','Lemteco','Muy lenteja','00','0000-00-00','Habilitado','http://localhost:8888/wsadmin/img/ic_comteco.png','1')";
+
+        if (mysqli_query($con, $ADD_PRODUCTO_TEST)) {
+          # code...
+          echo "<br> -- PRODUCTOS INSERTADOS -- <br>";
+        }
       }
     }
 
