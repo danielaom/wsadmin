@@ -2,92 +2,10 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/../ruta/subir_foto/conexion.php" description="&lt;?php&#10;mysqli_connect(&quot;localhost&quot;,&quot;root&quot;,&quot;&quot;);&#10;mysql..." line="0" />
-    <bookmark url="file://$PROJECT_DIR$/vista/registro_usuario.php" description="notEmpty: {" line="393" />
+    <bookmark url="file://$PROJECT_DIR$/vista/registro_usuario.php" description="notEmpty: {" line="404" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0432ebd-f183-4969-ab0f-a87acbaca1d8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/img/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/img/helado.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/img/icono.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/img/logoempresa.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/sis.rar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controlador/registroPromocion.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sis/restaurantedb.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vista/prueba.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/.idea/SweetStop.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/BD/conexion.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/bootstrapvalidator-master/demo/validators.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/bootstrapvalidator-master/dist/css/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/bootstrapvalidator-master/dist/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/bootstrapvalidator-master/dist/css/bootstrapValidator.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/bootstrapvalidator-master/dist/css/bootstrapValidator.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/bootstrapvalidator-master/dist/css/bootstrapValidator.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/bootstrapvalidator-master/dist/jquery/jquery-1.10.2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/bootstrapvalidator-master/dist/jquery/jquery-1.10.2.min.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/bootstrapvalidator-master/dist/js/bootstrapValidator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/bootstrapvalidator-master/dist/js/bootstrapValidator.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/conexion.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/controlador/cerrarSesion.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/controlador/editarCategoria.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/controlador/editarCliente.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/controlador/editarProducto.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/controlador/editarUsuario.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/controlador/inicioSesion.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/controlador/registroCategoria.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/controlador/registroCliente.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/controlador/registroProducto.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/controlador/registroUsuario.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/css/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/css/bootstrap.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/css/bootstrap.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/css/bootstrapValidator.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/css/bootstrapValidator.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/css/bootstrapValidator.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/index (2).html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/inicio.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/js/bootstrapValidator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/js/bootstrapValidator.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/js/jquery-1.11.2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/js/jquery-1.9.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/logout.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/modelo/Categoria.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/modelo/Producto.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/modelo/Usuario.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/sis/baserestaurant.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/sis/sis/conexion.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/sis/sis/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/sis/sis/login.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/sis/sis/logout.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/sis/sis/registro.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/sis/sis/welcome.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/vista/conexion.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/vista/indexAdm.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/vista/indexCj.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/vista/j.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/vista/registro_categoria.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/vista/registro_cliente.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/vista/registro_producto.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/vista/registro_promocion.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/vista/registro_usuario.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/vista/reporte_cliente.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/vista/reporte_producto.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wsadmin-master/vista/reporte_venta.php" />
-    </list>
+    <list default="true" id="c0432ebd-f183-4969-ab0f-a87acbaca1d8" name="Default" comment="" />
     <ignored path="SweetStop.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -118,8 +36,8 @@
       <file leaf-file-name="registro_producto.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vista/registro_producto.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4488">
-              <caret line="264" column="56" selection-start-line="264" selection-start-column="56" selection-end-line="264" selection-end-column="56" />
+            <state relative-caret-position="4777">
+              <caret line="281" column="99" selection-start-line="281" selection-start-column="99" selection-end-line="281" selection-end-column="99" />
               <folding />
             </state>
           </provider>
@@ -129,35 +47,18 @@
         <entry file="file://$PROJECT_DIR$/controlador/editarUsuario.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registroProducto.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="registroProducto.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controlador/registroProducto.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding>
-                <marker date="1475353396634" expanded="true" signature="468:513" ph="SELECT * FRO... producto" />
-                <marker date="1475353396634" expanded="true" signature="784:869" ph="insert into imagen... " />
-                <marker date="1475353396634" expanded="true" signature="1039:1084" ph="SELECT * fro... producto" />
-                <marker date="1475353396634" expanded="true" signature="1210:1431" ph="INSERT INTO producto... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="editarCliente.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controlador/editarCliente.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-              <folding>
-                <marker date="1475162773588" expanded="true" signature="548:745" ph="UPDATE usuar... " />
-              </folding>
+            <state relative-caret-position="442">
+              <caret line="26" column="65" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -165,9 +66,49 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3451">
-              <caret line="203" column="69" selection-start-line="203" selection-start-column="69" selection-end-line="203" selection-end-column="69" />
+            <state relative-caret-position="2754">
+              <caret line="162" column="69" selection-start-line="162" selection-start-column="69" selection-end-line="162" selection-end-column="69" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registroUsuario.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controlador/registroUsuario.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="731">
+              <caret line="43" column="51" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="conexion.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BD/conexion.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="56" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="instaladorBD.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/instaladorBD/instaladorBD.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="37" />
+              <folding>
+                <marker date="1475331546947" expanded="true" signature="423:547" ph="CREATE TABLE... rol" />
+                <marker date="1475331546947" expanded="true" signature="682:859" ph="INSERT INTO rol... " />
+                <marker date="1475331546947" expanded="true" signature="1050:1393" ph="CREATE TABLE... usuario" />
+                <marker date="1475331546947" expanded="true" signature="1540:2531" ph="INSERT INTO usuario... " />
+                <marker date="1475331546947" expanded="true" signature="2735:2963" ph="CREATE TABLE... usuariorol" />
+                <marker date="1475331546947" expanded="true" signature="3119:3665" ph="INSERT INTO usuariorol... " />
+                <marker date="1475331546947" expanded="true" signature="3874:4044" ph="CREATE TABLE... categoria" />
+                <marker date="1475331546947" expanded="true" signature="4196:4436" ph="INSERT INTO categoria... " />
+                <marker date="1475331546947" expanded="true" signature="4646:4958" ph="CREATE TABLE... producto" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -211,9 +152,6 @@
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -246,7 +184,6 @@
         <option value="$USER_HOME$/Downloads/index (1).html" />
         <option value="$PROJECT_DIR$/vista/j.php" />
         <option value="$PROJECT_DIR$/controlador/registroProducto.php" />
-        <option value="$PROJECT_DIR$/BD/conexion.php" />
         <option value="$PROJECT_DIR$/vista/registro_usuario.php" />
         <option value="$PROJECT_DIR$/vista/reporte_cliente.php" />
         <option value="$PROJECT_DIR$/controlador/registroCliente.php" />
@@ -257,6 +194,8 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/vista/registro_promocion.php" />
         <option value="$PROJECT_DIR$/vista/registro_producto.php" />
+        <option value="$PROJECT_DIR$/instaladorBD/instaladorBD.php" />
+        <option value="$PROJECT_DIR$/BD/conexion.php" />
       </list>
     </option>
   </component>
@@ -268,9 +207,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="x" value="-2" />
+    <option name="y" value="7" />
+    <option name="width" value="1370" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -298,6 +237,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -326,7 +266,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vista" />
+              <option name="myItemId" value="instaladorBD" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -340,13 +280,12 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="BD" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -436,18 +375,17 @@
       <workItem from="1475079102663" duration="14155000" />
       <workItem from="1475146357399" duration="2867000" />
       <workItem from="1475156987436" duration="11143000" />
-      <workItem from="1475464152970" duration="34000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187382000" />
+    <option name="totallyTimeSpent" value="187959000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="-2" y="7" width="1370" height="744" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16263238" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16412213" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.054462936" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -465,25 +403,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16263238" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.054462936" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17839608" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -501,13 +420,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vista/reporte_venta.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vista/conexion.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -603,9 +515,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
           <caret line="41" column="0" selection-start-line="27" selection-start-column="36" selection-end-line="41" selection-end-column="0" />
-          <folding>
-            <marker date="1474989763665" expanded="true" signature="168:314" ph="SELECT u.idU... usuariorol" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -613,7 +523,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1751">
           <caret line="103" column="10" selection-start-line="103" selection-start-column="10" selection-end-line="103" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -675,31 +584,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/index (1).html" />
-    <entry file="file://$USER_HOME$/Downloads/index.html" />
+    <entry file="file://$USER_HOME$/Downloads/index (1).html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-266">
+          <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="547" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controlador/editarProducto.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="481">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../Bottero1/Procesos/CNProducto.php" />
     <entry file="file://$PROJECT_DIR$/../Bottero1/Procesos/clases/Categoria.php" />
     <entry file="file://$PROJECT_DIR$/../Bottero1/Vista/administrador/agregarproducto.php" />
-    <entry file="file://$PROJECT_DIR$/BD/conexion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_1.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -712,8 +625,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vista/registro_usuario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="400" column="42" selection-start-line="0" selection-start-column="0" selection-end-line="484" selection-end-column="0" />
+        <state relative-caret-position="1887">
+          <caret line="111" column="238" selection-start-line="111" selection-start-column="238" selection-end-line="111" selection-end-column="238" />
           <folding />
         </state>
       </provider>
@@ -722,7 +635,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -730,7 +642,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="451" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -738,6 +649,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="535">
           <caret line="61" column="13" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -745,30 +657,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="307" column="58" selection-start-line="307" selection-start-column="58" selection-end-line="307" selection-end-column="58" />
-          <folding>
-            <marker date="1475161820045" expanded="true" signature="4300:4504" ph="SELECT u.idU... usuario" />
-            <marker date="1475161820045" expanded="true" signature="5643:5761" ph="..." />
-            <marker date="1475161820045" expanded="true" signature="6024:6146" ph="..." />
-            <marker date="1475161820045" expanded="true" signature="7748:7791" ph="SELECT * FRO... usuario" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controlador/editarUsuario.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controlador/editarCliente.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
+        <state relative-caret-position="305">
           <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-          <folding>
-            <marker date="1475162773588" expanded="true" signature="548:745" ph="UPDATE usuar... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -783,21 +687,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controlador/registroUsuario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="731">
+          <caret line="43" column="51" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3451">
-          <caret line="203" column="69" selection-start-line="203" selection-start-column="69" selection-end-line="203" selection-end-column="69" />
+        <state relative-caret-position="2754">
+          <caret line="162" column="69" selection-start-line="162" selection-start-column="69" selection-end-line="162" selection-end-column="69" />
           <folding />
         </state>
       </provider>
@@ -828,22 +733,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vista/registro_producto.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4488">
-          <caret line="264" column="56" selection-start-line="264" selection-start-column="56" selection-end-line="264" selection-end-column="56" />
+        <state relative-caret-position="4777">
+          <caret line="281" column="99" selection-start-line="281" selection-start-column="99" selection-end-line="281" selection-end-column="99" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controlador/registroProducto.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="442">
+          <caret line="26" column="65" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instaladorBD/instaladorBD.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="37" />
           <folding>
-            <marker date="1475353396634" expanded="true" signature="468:513" ph="SELECT * FRO... producto" />
-            <marker date="1475353396634" expanded="true" signature="784:869" ph="insert into imagen... " />
-            <marker date="1475353396634" expanded="true" signature="1039:1084" ph="SELECT * fro... producto" />
-            <marker date="1475353396634" expanded="true" signature="1210:1431" ph="INSERT INTO producto... " />
+            <marker date="1475331546947" expanded="true" signature="423:547" ph="CREATE TABLE... rol" />
+            <marker date="1475331546947" expanded="true" signature="682:859" ph="INSERT INTO rol... " />
+            <marker date="1475331546947" expanded="true" signature="1050:1393" ph="CREATE TABLE... usuario" />
+            <marker date="1475331546947" expanded="true" signature="1540:2531" ph="INSERT INTO usuario... " />
+            <marker date="1475331546947" expanded="true" signature="2735:2963" ph="CREATE TABLE... usuariorol" />
+            <marker date="1475331546947" expanded="true" signature="3119:3665" ph="INSERT INTO usuariorol... " />
+            <marker date="1475331546947" expanded="true" signature="3874:4044" ph="CREATE TABLE... categoria" />
+            <marker date="1475331546947" expanded="true" signature="4196:4436" ph="INSERT INTO categoria... " />
+            <marker date="1475331546947" expanded="true" signature="4646:4958" ph="CREATE TABLE... producto" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BD/conexion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="56" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>
