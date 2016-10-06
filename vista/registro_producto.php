@@ -189,7 +189,14 @@ if (!empty($_GET['show'])) {
                                     <td><?php echo $row ['nombre']; ?></td>
                                     <td><?php echo '<br> <img  width="56" height="56" src='.$row["imagen"].'>'; ?></td>
                                     <td><?php echo $row ['precio']; ?></td>
-                                    <td><?php echo $row ['categoriaIdCategoria']; ?></td>
+                                    <td>
+                                      <?php
+                                        $ID_CATEGORIA = $row ['categoriaIdCategoria'];
+                                        $OBTENER_CATEGORIA = mysqli_query($con,"SELECT nombre FROM categoria WHERE idCategoria='$ID_CATEGORIA'");
+                                        $NOMBRE = mysqli_fetch_assoc($OBTENER_CATEGORIA);
+                                        echo $NOMBRE['nombre'];
+                                      ?>
+                                    </td>
                                     <td>
                                         <?php
                                         switch ($row ['estado']) {
