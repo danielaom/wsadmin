@@ -83,6 +83,10 @@ if (!isset($_SESSION['loggedin'])) {
 
 
 
+
+
+
+
     </div>
     <form action="../controlador/registroPromocion.php" method="POST">
       <div class="col-md-4">
@@ -272,10 +276,18 @@ if (!isset($_SESSION['loggedin'])) {
                     }
 
                 }
+
+
+
+
+
             }
         });
         $('#example').DataTable({
+            "iDisplayLength": 5,
+            "aLengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
             "language": {
+
                 "lengthMenu": "Mostrar _MENU_ registros por pagina",
                 "zeroRecords": "No se econtraron registros",
                 "info": "Mostrando pagina _PAGE_ de _PAGES_",

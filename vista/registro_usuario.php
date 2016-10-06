@@ -78,7 +78,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-            <h1>Usuarios</h1>
+        <h1 class="glyphicon glyphicon-user" >Usuarios</h1>
             <div class="row-fluid sortable">
                 <div class="box span12">
                     <div class="box-header" data-original-title>
@@ -93,13 +93,11 @@
                         <table id="usu" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                             <tr>
-                                <th>Nombre</th>
-                                <th>Apellido paterno</th>
-                                <th>Apellido materno</th>
-                                <th>Ci</th>
-                                <th>Tel&eacute;fono</th>
-                                <th>Estado</th>
-                                <th>Editar</th>
+                                <th width="40%">Nombre Completo</th>
+                                <th width="20%">Ci </th>
+                                <th width="20%">Tel&eacute;fono </th>
+                                <th width="10%">Estado</th>
+                                <th width="10%">Editar</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -114,9 +112,7 @@
                             while ($row = mysqli_fetch_array($getAll, MYSQLI_ASSOC)):
                                 ?>
                                 <tr>
-                                    <td><?php echo $row ['nombre']; ?></td>
-                                    <td><?php echo $row ['apellidoPaterno']; ?></td>
-                                    <td><?php echo $row ['apellidoMaterno']; ?></td>
+                                    <td><?php echo $row ['nombre']." ".$row ['apellidoPaterno']." ". $row ['apellidoMaterno']; ?></td>
                                     <td><?php echo $row ['ci']; ?></td>
                                     <td><?php echo $row ['telefono']; ?></td>
                                     <td>
@@ -156,8 +152,8 @@
             <div class="row-fluid sortable">
                 <div class="box span12">
                   <div class="box-header" data-original-title>
-                        <h2><i class="halflings-icon edit"></i><span class="break"></span>Ingresar datos del usuario
-                        </h2>
+                        <h4><i class="halflings-icon edit"></i><span class="break"></span>Ingresar datos del usuario
+                        </h4>
                         <div class="box-icon">
                             <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
                         </div>

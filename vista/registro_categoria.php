@@ -82,11 +82,11 @@
       <div class="container">
           <div class="row">
               <div class="col-md-8">
-                  <h1>Categorias</h1>
+                  <h1 class="glyphicon glyphicon-list-alt">Categorias</h1>
                   <div class="row-fluid sortable">
                       <div class="box span12">
                           <div class="box-header" data-original-title>
-                              <h2><i class="halflings-icon user"></i><span class="break"></span>Lista categorias</h2>
+                              <h4><i class="halflings-icon user"></i><span class="break"></span>Lista categorias</h4>
                               <div class="box-icon">
 
                                   <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
@@ -151,8 +151,8 @@
                   <div class="row-fluid sortable">
                       <div class="box span12">
                           <div class="box-header" data-original-title>
-                              <h2><i class="halflings-icon edit"></i><span class="break"></span>Ingresar nueva categoría
-                              </h2>
+                              <h4><i class="halflings-icon edit"></i><span class="break"></span>Ingresar nueva categoría
+                              </h4>
                               <div class="box-icon">
                                 <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
                               </div>
