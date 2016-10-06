@@ -254,7 +254,7 @@ if (!empty($_GET['show'])) {
                         while($DATA = mysqli_fetch_array($QUERY_OBTENER_Producto, MYSQLI_ASSOC)):
                             ?>
                             <div class="box-content">
-                                <form id="producto" class="form-horizontal" action="../controlador/editarProducto.php" method="POST">
+                                <form id="producto" enctype="multipart/form-data" class="form-horizontal" action="../controlador/editarProducto.php" method="POST">
                                     <fieldset>
                                         <div class="control-group">
                                             <div class="controls">
@@ -340,7 +340,7 @@ if (!empty($_GET['show'])) {
                     else {
                     ?>
                     <div class="box-content">
-                        <form id="producto" class="form-horizontal" action="../controlador/registroProducto.php" method="POST">
+                        <form id="producto" enctype="multipart/form-data" class="form-horizontal" action="../controlador/registroProducto.php" method="POST">
                             <fieldset>
                                 <div class="form-group">
                                     <label class="control-label">*Nombre</label>

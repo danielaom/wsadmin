@@ -1,12 +1,15 @@
 <?php
 
-$con = mysqli_connect("localhost", "root", "", "restaurante");
+include_once("../BD/conexion.php");
+$cnn= new conexion();
+$con =$cnn->conectar();
+mysqli_select_db($con,"restaurante");
 
-session_start();
-if (!isset($_SESSION['loggedin'])) {
-    # code...
-    ?>
-<?php } ?>
+  session_start();
+  if (!isset($_SESSION['loggedin'])) {
+      # code...
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,22 +74,12 @@ if (!isset($_SESSION['loggedin'])) {
         </ul>
     </div>
 </nav>
-<div class="container">
+<?php if (!isset($_GET['id'])) { ?>
+  <div class="container">
     <div class="row">
         <div class="col-md-5">
             <h1>Registro de promoción</h1>
         </div>
-
-
-
-
-
-
-
-
-
-
-
     </div>
     <form action="../controlador/registroPromocion.php" method="POST">
       <div class="col-md-4">
@@ -138,10 +131,7 @@ if (!isset($_SESSION['loggedin'])) {
             </thead>
             <tbody>
             <?php
-            include_once("../BD/conexion.php");
-            $cnn = new conexion();
-            $con = $cnn->conectar();
-            mysqli_select_db($con, "restaurante");
+
             $query_Mostrar = "SELECT * FROM producto";
 
             $getAll = mysqli_query($con, $query_Mostrar);
@@ -160,6 +150,121 @@ if (!isset($_SESSION['loggedin'])) {
       </div>
     </form>
 </div>
+<?php } else {
+  $ID =  $_GET['id'];
+  $RESULT_PRODUCTO = mysqli_query($con, "SELECT * FROM promocion WHERE idPromocion='$ID'");
+  $PROMOCION = mysqli_fetch_assoc($RESULT_PRODUCTO);
+?>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <h1>Registro de promoción</h1>
+        </div>
+    </div>
+    <form action="../controlador/registroPromocion.php" method="POST">
+      <div class="col-md-4">
+        <h3>Editar Datos promoción</h3>
+        <div class="form-group">
+            <input type="hidden" name="id" class="form-control" placeholder="Codigo" value="<?php echo $PROMOCION['idPromocion'];?>">
+        </div>
+          <div class="form-group">
+              <label>Codigo</label>
+              <input type="text" name="codigo" class="form-control" placeholder="Codigo" value="<?php echo $PROMOCION['codigo'];?>">
+          </div>
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="<?php echo $PROMOCION['nombre'];?>">
+        </div>
+        <div class="form-group">
+            <label>Descripcion</label>
+            <input type="text" name="descripcion" class="form-control" placeholder="Regalo" value="<?php echo $PROMOCION['descripcion'];?>">
+        </div>
+        <div class="form-group">
+            <label>Precio</label>
+            <input type="text" name="precio" class="form-control" placeholder="Precio" value="<?php echo $PROMOCION['precio'];?>">
+        </div>
+        <div class="form-group">
+            <label>Fecha inicio</label>
+            <input type="text"  name="fechaInicio" class="form-control" placeholder="Fecha inicio" value="<?php echo $PROMOCION['fechaInicio'];?>">
+        </div>
+        <div class="form-group">
+            <label>Fecha fin</label>
+            <input type="text" name="fechaFin" class="form-control" placeholder="Fecha fin" value="<?php echo $PROMOCION['fechaFin'];?>">
+        </div>
+        <div class="form-group">
+            <label>Imagen</label>
+            <input type="file" name="imagen" id="exampleInputFile">
+            <td><?php echo '<br> <img  width="56" height="56" src='.$PROMOCION['imagen'].'>'; ?></td>
+            <p class="help-block">Ingrese la imagen adjunta a la promocion.</p>
+        </div>
+        <div class="col-md-offset-8 col-md-4">
+            <button type="submit" class="btn  btn-success btn-block">Registrar</button>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <h3>Producto Adicionados</h3>
+        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+                <th width="10%">Añadir</th>
+                <th width="10%">Imagen</th>
+                <th width="30%">Nombre</th>
+                <th width="10%">Precio</th>
+                <th width="30%">Cantidad</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+
+            $query_Mostrar = "SELECT * FROM productoPromocion WHERE promocionIdPromocion='$ID'";
+
+            $getAll = mysqli_query($con, $query_Mostrar);
+            while ($row = mysqli_fetch_array($getAll, MYSQLI_ASSOC)):
+                ?>
+                <tr>
+                    <td><input type="checkbox" name="productos[]" value="<?php echo $row['idProducto']; ?>"></td>
+                    <td><?php echo '<br> <img  width="36" height="36" src='.$row["imagen"].'>'; ?></td>
+                    <td><?php echo $row ['nombre']; ?></td>
+                    <td><?php echo $row ['precio']; ?></td>
+                    <td><input type="text" class="form-control" placeholder="Cantidad" name="cantidad[]"></td>
+                </tr>
+            <?php endwhile; ?>
+            </tbody>
+        </table>
+        <br>
+        <h3>Lista de producto disponibles</h3>
+        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+                <th width="10%">Añadir</th>
+                <th width="10%">Imagen</th>
+                <th width="30%">Nombre</th>
+                <th width="10%">Precio</th>
+                <th width="30%">Cantidad</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+
+            $query_Mostrar = "SELECT * FROM producto";
+
+            $getAll = mysqli_query($con, $query_Mostrar);
+            while ($row = mysqli_fetch_array($getAll, MYSQLI_ASSOC)):
+                ?>
+                <tr>
+                    <td><input type="checkbox" name="productos[]" value="<?php echo $row['idProducto']; ?>"></td>
+                    <td><?php echo '<br> <img  width="36" height="36" src='.$row["imagen"].'>'; ?></td>
+                    <td><?php echo $row ['nombre']; ?></td>
+                    <td><?php echo $row ['precio']; ?></td>
+                    <td><input type="text" class="form-control" placeholder="Cantidad" name="cantidad[]"></td>
+                </tr>
+            <?php endwhile; ?>
+            </tbody>
+        </table>
+      </div>
+    </form>
+  </div>
+<?php } ?>
 <script type="text/javascript">
     $(document).ready(function () {
         $('#usuario').bootstrapValidator({
