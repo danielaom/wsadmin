@@ -7,22 +7,22 @@
 ?>
   <!DOCTYPE html>
     <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Sweet stop</title>
-        <meta name="description" content="Bootstrap Metro Dashboard">
-        <meta name="author" content="Daniela Orellana">
-        <meta name="keyword" content="">
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet stop</title>
+    <meta name="description" content="Bootstrap Metro Dashboard">
+    <meta name="author" content="Daniela Orellana">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <meta name="keyword" content="">
+    <meta name="viewport" role="navigation" class="navbar navbar-default" content="width=device-width, initial-scale=1">
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="../css/bootstrap.css" rel="stylesheet">
-        <script src="../js/jquery-1.9.1.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
-
-        <link rel="stylesheet" href="../css/bootstrapValidator.css"/>
-        <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
-        <script type="text/javascript" src="../js/bootstrapValidator.js"></script>
-    </head>
+    <link rel="stylesheet" href="../css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrapValidator.css"/>
+    <script type="text/javascript" src="../js/bootstrapValidator.js"></script>
+</head>
     <body>
       <nav role="navigation" class="navbar navbar-default">
         <div class="navbar-header">
@@ -46,7 +46,7 @@
                   <ul class="dropdown-menu">
                     <li class="active"><a href="registro_categoria.php" tabindex="-1">Categorias</a></li>
                     <li><a href="registro_producto.php" tabindex="-1">Productos</a></li>
-                    <li><a href="registro_promocion.php" tabindex="-1">Promociones</a></li>
+                    <li><a href="mostrar_promocion.php" tabindex="-1">Promociones</a></li>
                   </ul>
                 </li>
 
@@ -82,7 +82,13 @@
       <div class="container">
           <div class="row">
               <div class="col-md-8">
-                  <h1 class="glyphicon glyphicon-list-alt">Categorias</h1>
+                  <table  >
+                      <tr>
+                          <td><img src="../img/categoria.png"></td>
+                          <td><h1>Categorias</h1></td>
+                      </tr>
+
+                  </table>
                   <div class="row-fluid sortable">
                       <div class="box span12">
                           <div class="box-header" data-original-title>
@@ -94,7 +100,7 @@
                               </div>
                           </div>
                           <div class="box-content">
-                              <table class="table table-striped table-bordered bootstrap-datatable datatable">
+                              <table id="categorias" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                   <thead>
                                   <tr>
                                       <th>Categoria</th>
@@ -120,13 +126,13 @@
                                                   case 'Habilitado':
                                                       echo "
                                                  <a class=\"btn btn-success btn-xs\">
-                                                  <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"  ></span>";
+                                                  <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"  >&nbsp;HABILITADO&nbsp;&nbsp;</span>";
                                                       break;
                                                   case 'Deshabilitado':
 
                                                       echo "
                                                  <a class=\"btn btn-danger btn-xs\">
-                                                  <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"  ></span>";
+                                                  <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"  >&nbsp;DESHABILITADO</span>";
                                                       break;
                                               }
                                               ?>
@@ -205,7 +211,7 @@
                                           </div>
                                           <div class="form-actions">
                                               <button type="submit" class="btn btn-primary">Actualizar</button>
-                                              <button type="reset" class="btn btn-danger">Cancelar</button>
+                                              <button type="reset" class="btn btn-danger" onclick="history.go(-1);">Cancelar</button>
                                           </div>
                                           </fieldset>
                             </form>
@@ -294,7 +300,36 @@
             });
         });
     </script>
-    </html>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../js/jquery.dataTables.min.js"></script>
+<script src="../js/dataTables.bootstrap.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#categorias').DataTable({
+            "language": {
+                "lengthMenu": "Mostrar _MENU_ registros por pagina",
+                "zeroRecords": "No se econtraron registros",
+                "info": "Mostrando pagina _PAGE_ de _PAGES_",
+                "infoEmpty": "No se encontraron registros",
+                "infoFiltered": "(filtered from _MAX_ total records)",
+                "search": "Buscar",
+                "paginate": {
+                    "first": "Primero",
+                    "last": "Ultimo",
+                    "next": "Siguiente",
+                    "previous": "Anterior"
+                },
+
+            }
+        });
+    });
+</script>
+
+</html>
 <?php
 mysqli_close($con);
 ?>

@@ -8,20 +8,21 @@ if (!isset($_SESSION['loggedin'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sweet stop</title>
     <meta name="description" content="Bootstrap Metro Dashboard">
     <meta name="author" content="Daniela Orellana">
+    <link rel="shortcut icon" href="img/favicon.ico">
     <meta name="keyword" content="">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" role="navigation" class="navbar navbar-default" content="width=device-width, initial-scale=1">
     <link href="../css/bootstrap.css" rel="stylesheet">
     <script src="../js/jquery-1.9.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
 
+    <link rel="stylesheet" href="../css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="../css/bootstrapValidator.css"/>
-    <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="../js/bootstrapValidator.js"></script>
+
 </head>
 <body>
 
@@ -47,8 +48,8 @@ if (!isset($_SESSION['loggedin'])) {
                 <li class="active" class="dropdown-submenu"><a href="#" tabindex="-1" data-toggle="dropdown">Menú</a>
                     <ul class="dropdown-menu">
                         <li><a href="registro_categoria.php" tabindex="-1">Categorias</a></li>
-                        <li class="active"><a href="registro_producto.php" tabindex="-1">Productos</a></li>
-                        <li><a href="registro_promocion.php" tabindex="-1">Promociones</a></li>
+                        <li ><a href="registro_producto.php" tabindex="-1">Productos</a></li>
+                        <li class="active"><a href="mostrar_promocion.php" tabindex="-1">Promociones</a></li>
                     </ul>
                 </li>
 
@@ -141,24 +142,39 @@ if (!empty($_GET['show'])) {
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
-            <h1>Productos</h1>
+        <div class="col-md-10">
+            <table>
+                <tr>
+                    <td><img src="../img/promo.jpg"></td>
+                    <td><h1>Promociones</h1></td>
+                </tr>
+
+            </table>
             <div class="row-fluid sortable">
                 <div class="box span12">
                     <div class="box-header" data-original-title>
+                        <table>
+                            <tr>
 
-                        <h2><i class="halflings-icon user"></i><span class="break"></span>Lista producto</h2>
+                                <td><h2><i class="halflings-icon user"></i><span class="break"></span>Lista promociones</h2></td>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                <td> <a href="registro_promocion.php" class="btn-minimize"><i class="halflings-icon chevron-up"></i>
+                                        <button href="registro_promocion.php" type="button" class="btn btn-success">Nueva Promoción</button></a></td>
+                            </tr>
+
+                        </table>
+
                         <div class="box-icon">
 
                             <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
 
                         </div>
                     </div>
-                    <div class="box-content">
-                        <div class="col-md-offset-8 col-md-4">
-                        <button type="button" class="btn btn-success">Success</button>
+
+                        <div>
+
                         </div>
-                        <table class="table table-striped table-bordered bootstrap-datatable datatable">
+                        <table id="promocion" class="table table-striped table-bordered bootstrap-datatable datatable">
                             <thead>
                             <tr>
                                 <th>Nombre</th>
@@ -195,13 +211,13 @@ if (!empty($_GET['show'])) {
                                             case 'Habilitado':
                                                 echo "
                                                <a class=\"btn btn-success btn-xs\">
-                                                <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"  ></span>";
+                                                <span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"  >&nbsp;Habilitado&nbsp;&nbsp;</span>";
                                                 break;
                                             case 'Deshabilitado':
 
                                                 echo "
                                                <a class=\"btn btn-danger btn-xs\">
-                                                <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"  ></span>";
+                                                <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"  >&nbsp;Deshabilitado</span>";
                                                 break;
                                         }
                                         ?>
@@ -211,11 +227,14 @@ if (!empty($_GET['show'])) {
                                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 
                                         </a>
-
                                         <a class="btn btn-primary btn-xs" href="?show=<?php echo $row ['idPromocion']; ?>">
                                             <span data-toggle="modal" data-target="#loginModal" class="glyphicon glyphicon-search" aria-hidden="true"></span>
-
                                         </a>
+
+<!--                                        <a class="btn btn-primary btn-xs" href="?show=--><?php //echo $row ['idPromocion']; ?><!--">-->
+<!--                                            <span data-toggle="modal" data-target="#loginModal" class="glyphicon glyphicon-search" aria-hidden="true"></span>-->
+<!---->
+<!--                                        </a>-->
 
 
                                     </td>
@@ -229,5 +248,32 @@ if (!empty($_GET['show'])) {
             </div>
         </div>
 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery.dataTables.min.js"></script>
+    <script src="../js/dataTables.bootstrap.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#promocion').DataTable({
+                "language": {
+                    "lengthMenu": "Mostrar _MENU_ registros por pagina",
+                    "zeroRecords": "No se econtraron registros",
+                    "info": "Mostrando pagina _PAGE_ de _PAGES_",
+                    "infoEmpty": "No se encontraron registros",
+                    "infoFiltered": "(filtered from _MAX_ total records)",
+                    "search": "Buscar",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Ultimo",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    },
+
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -8,7 +8,7 @@
       $usuario = mysqli_real_escape_string($con,$_POST['usuario']);
       $password = mysqli_real_escape_string($con,$_POST['password']);
 
-      $sql = "SELECT * FROM usuariorol WHERE usuario = '$usuario' AND password = '$password'";
+      $sql = "SELECT ur.idUsuarioRol, ur.usuario, ur.password,ur.usuarioIdUsuario,ur.rolIdRol FROM usuariorol as ur INNER JOIN usuario as u on ur.usuarioIdUsuario=u.idUsuario WHERE ur.usuario = '$usuario' AND ur.password = '$password' AND u.estado='Habilitado'";
       $result=mysqli_query($con,$sql);
       $rows = $result->num_rows;
 
