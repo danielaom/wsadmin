@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 if (!isset($_SESSION['loggedin'])){
@@ -14,8 +15,34 @@ if (!isset($_SESSION['loggedin'])){
 		<meta name="keyword" content="">
 		<meta name="viewport" role="navigation"  class="navbar navbar-default" content="width=device-width, initial-scale=1" >
 		<link href="css/bootstrap.css" rel="stylesheet">
+
+<link rel="stylesheet" href="css/flexslider.css" >
+<link rel="stylesheet" href="css/styleSlider.css" >
+<script type="text/javascript" src="js/modernizr.custom.28468.js"></script>
+<script src="js/flexslider-min.js.js"></script>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+
 		<script src="js/jquery-1.9.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+
+
+
+			<link rel="stylesheet" href="css/flexslider.css" type="text/css">
+			<script src="js/jquery.min.js"></script>
+			<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+			<script src="js/jquery.flexslider.js"></script>
+			<script type="text/javascript" charset="utf-8">
+		  $(window).load(function() {
+		    $('.flexslider').flexslider({
+		    	touch: true,
+		    	pauseOnAction: false,
+		    	pauseOnHover: false,
+		    });
+		  });
+		</script>
+
+
+
 	</head>
 
 	<body bgcolor="#EBEFF1">
@@ -51,7 +78,28 @@ if (!isset($_SESSION['loggedin'])){
 
 	<?php if (isset($_GET['error'])) { echo "<script> $('#loginModal').modal('show'); </script>"; }?>
 
-	<div align="center"><IMG SRC="img/icono.png" WIDTH=1360 HEIGHT=400    srcset="img/icono.png 2x"></div>
+	<div class="flexslider">
+			<ul class="slides">
+				<li>
+					<img src="img/1.png" alt="">
+					<section class="flex-caption">
+
+					</section>
+				</li>
+				<li>
+					<img src="img/2.jpg" alt="">
+					<section class="flex-caption">
+
+					</section>
+				</li>
+				<li>
+					<img src="img/3.jpg" alt="">
+					<section class="flex-caption">
+
+					</section>
+				</li>
+			</ul>
+		</div>
 
 	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -76,6 +124,7 @@ if (!isset($_SESSION['loggedin'])){
 								<input type="password" class="form-control" name="password" id="password" required/>
 							</div>
 						</div>
+
 					</div>
 					<div class="modal-footer">
 						<div class="form-group">
@@ -85,6 +134,7 @@ if (!isset($_SESSION['loggedin'])){
 						</div>
 					</div>
 				</form>
+
 
 				<div style = "font-size:16px; color:#cc0000;"><?php echo isset($error) ? utf8_decode($error) : '' ; ?></div>
 			</div>

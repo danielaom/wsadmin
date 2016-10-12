@@ -105,7 +105,6 @@ if (!empty($_GET['show'])) {
                     <table class="table table-striped table-bordered bootstrap-datatable datatable">
                         <thead>
                         <tr>
-                            <th>Nombre</th>
                             <th>Imagen</th>
                             <th>Descripcion</th>
                         </tr>
@@ -124,7 +123,6 @@ if (!empty($_GET['show'])) {
                         while ($row = mysqli_fetch_array($getAll, MYSQLI_ASSOC)):
                             ?>
                             <tr>
-                                <td><?php echo $row ['nombre']; ?></td>
                                 <td><?php echo '<br> <img  width="56" height="56" src='.$row["imagen"].'>'; ?></td>
                                 <td><?php echo $row ['descripcion']; ?></td>
                             </tr>

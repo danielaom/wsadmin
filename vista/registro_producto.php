@@ -97,7 +97,7 @@ if (!empty($_GET['show'])) {
     }
 </style>
 
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+<div class="modal fade" id="loginModal"  aria-labelledby="myModalLabel" aria-hidden="true" >
     <div class="modal-dialog" id="mdialTamanio">
         <?php
         include_once("../BD/conexion.php");
@@ -109,9 +109,9 @@ if (!empty($_GET['show'])) {
 
         while($DATA = mysqli_fetch_array($QUERY_OBTENER_Producto, MYSQLI_ASSOC)):  ?>
             <div class="modal-content">
-                <form id="loginForm" method="POST" class="form-horizontal" action="controlador/inicioSesion.php">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <div class="row">
+                <form id="loginForm" method="POST"  action="controlador/inicioSesion.php">
+                    <button type="button" class="close" data-dismiss="modal" >&times;</button>
+                    <div >
                         <div class="card"  >
                             <a class="img-card" href="http://www.fostrap.com/">
                                 <img src="<?php echo $DATA['imagen'];?>" />

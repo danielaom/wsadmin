@@ -44,10 +44,10 @@ if (mysqli_connect_errno())
             $QUERY_OBTENER=mysqli_query($con,"SELECT * from usuario WHERE ci='$ci'");
             $DATA = mysqli_fetch_array($QUERY_OBTENER);
             $ID = $DATA['idUsuario'];
-            $USRNOMBRE =substr ($DATA['nombre'],0,2);
-            $USRAPELLIDO =substr( $DATA['apellidoPaterno'],0,2);
+            $USRNOMBRE =substr ($DATA['nombre'],0,1);
+            $USRAPELLIDO =substr( $DATA['apellidoPaterno'],0,1);
 
-       $USUARIO=$USRNOMBRE.$USRAPELLIDO;
+       $USUARIO=$USRNOMBRE.$USRAPELLIDO.$ci;
             $QUERY_INSERTROL= "insert into usuariorol(idUsuarioRol,usuario,password,usuarioIdUsuario,rolIdRol)
                             VALUES ('','$USUARIO','$PASS','$ID','$rol')";
 

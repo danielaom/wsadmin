@@ -120,7 +120,6 @@ if (!isset($_SESSION['loggedin'])) {
                 </div>
                 <div class="col-md-offset-8 col-md-4">
                     <button type="submit" class="btn  btn-success btn-block">Registrar</button>
-                    <button type="reset" class="btn btn-danger">Cancelar</button>
                 </div>
             </div>
             <div class="col-md-8">
@@ -132,7 +131,7 @@ if (!isset($_SESSION['loggedin'])) {
                         <th width="10%">Imagen</th>
                         <th width="30%">Nombre</th>
                         <th width="10%">Precio</th>
-                        <th width="30%">Cantidad</th>
+
                     </tr>
                     </thead>
                     <tbody>
@@ -146,7 +145,7 @@ if (!isset($_SESSION['loggedin'])) {
                             <td><?php echo '<br> <img  width="36" height="36" src='.$row["imagen"].'>'; ?></td>
                             <td><?php echo $row ['nombre']; ?></td>
                             <td><?php echo $row ['precio']; ?></td>
-                            <td><input type="text" class="form-control" placeholder="Cantidad" name="cantidad[]"></td>
+
                         </tr>
                     <?php endwhile; ?>
                     </tbody>
@@ -216,11 +215,11 @@ if (!isset($_SESSION['loggedin'])) {
                 <table id="promocion" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                     <tr>
-                        <th width="10%">Añadir</th>
-                        <th width="10%">Imagen</th>
+                        <th width="20%">Añadir</th>
+                        <th width="20%">Imagen</th>
                         <th width="30%">Nombre</th>
-                        <th width="10%">Precio</th>
-                        <th width="30%">Cantidad</th>
+                        <th width="20%">Precio</th>
+
                     </tr>
                     </thead>
                     <tbody>
@@ -234,7 +233,7 @@ if (!isset($_SESSION['loggedin'])) {
                             <td><?php echo '<br> <img  width="36" height="36" src='.$row["imagen"].'>'; ?></td>
                             <td><?php echo $row ['nombre']; ?></td>
                             <td><?php echo $row ['precio']; ?></td>
-                            <td><input type="text" class="form-control" placeholder="Cantidad" name="cantidad[]"></td>
+
                         </tr>
                     <?php endwhile; ?>
                     </tbody>
@@ -244,11 +243,11 @@ if (!isset($_SESSION['loggedin'])) {
                 <table id="promo" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                     <tr>
-                        <th width="10%">Añadir</th>
-                        <th width="10%">Imagen</th>
+                        <th width="20%">Añadir</th>
+                        <th width="20%">Imagen</th>
                         <th width="30%">Nombre</th>
-                        <th width="10%">Precio</th>
-                        <th width="30%">Cantidad</th>
+                        <th width="20%">Precio</th>
+
                     </tr>
                     </thead>
                     <tbody>
@@ -262,7 +261,7 @@ if (!isset($_SESSION['loggedin'])) {
                             <td><?php echo '<br> <img  width="36" height="36" src='.$row["imagen"].'>'; ?></td>
                             <td><?php echo $row ['nombre']; ?></td>
                             <td><?php echo $row ['precio']; ?></td>
-                            <td><input type="text" class="form-control" placeholder="Cantidad" name="cantidad[]"></td>
+
                         </tr>
                     <?php endwhile; ?>
                     </tbody>
@@ -271,6 +270,11 @@ if (!isset($_SESSION['loggedin'])) {
         </form>
     </div>
 <?php } ?>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../js/jquery.dataTables.min.js"></script>
+<script src="../js/dataTables.bootstrap.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
 <script type="text/javascript">
     $(document).ready(function () {
         $('#usuario').bootstrapValidator({
@@ -370,6 +374,9 @@ if (!isset($_SESSION['loggedin'])) {
                 }
             }
         });
+
+
+
         $('#promocion').DataTable({
             "iDisplayLength": 5,
             "aLengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
