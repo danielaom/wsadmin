@@ -18,7 +18,7 @@ if (mysqli_connect_errno())
     if (!empty($_FILES['imagen']['name'])) {
         # code...
         $choose = $_FILES['imagen']['name'];
-        $image = "http://localhost/sw/img/".$choose;
+        $image = "http://192.168.43.199:80/sw/img/".$choose;
         $imageDir = "../img/".$choose;
         move_uploaded_file($_FILES['imagen']['tmp_name'],$imageDir);
         $sql_query = "UPDATE producto SET nombre='$nombre',descripcion='$descripcion',precio='$precio',categoriaIdCategoria='$categoria',imagen='$image',estado='$estado' WHERE idProducto='$ID'";

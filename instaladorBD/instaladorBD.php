@@ -103,7 +103,7 @@
         # code...
         echo "<br><br> -- TABLA CATEGORIA CREADA --";
         $ADD_CATEGORY_TEST = "INSERT INTO categoria(idCategoria,nombre,estado)
-                              VALUES ('','Crepes','Habilitado'),
+                              VALUES ('','Frappes','Habilitado'),
                                      ('','Jugos','Habilitado'),
                                      ('','Cafes','Habilitado')";
 
@@ -130,49 +130,46 @@
         # code...
         echo "<br> -- TABLA PRODUCTO CREADA --";
         $ADD_PRODUCTO_TEST = "INSERT INTO producto(idProducto,nombre,descripcion,precio,fecha,estado,imagen,categoriaIdCategoria)
-                              VALUES ('','Lemteco','Muy lenteja','00','0000-00-00','Habilitado','http://localhost/sw/img/ic_comteco.png','1'),
-                                     ('','Jugo de frutilla','Muy lenteja','00','0000-00-00','Habilitado','http://localhost/sw/img/cafe.png','2'),
-                                     ('','Lemteco','Muy lenteja','00','0000-00-00','Habilitado','http://localhost/sw/img/pan.jpg','3'),
-                                     ('','Lemteco','Muy lenteja','00','0000-00-00','Habilitado','http://localhost/sw/img/jugofrutilla.png','1')";
+                              VALUES ('','Frappuccino','Siente el dulce sabor del cafe en Sweet Stop','10','17-10-2016','Habilitado','http://192.168.1.38:8888/wsadmin/img/frappuccino.png','1'),
+                                     ('','Frappe de Maracuya','El sabor exótico de Maracuyá lo tenemos al paso!!','10','17-10-2016','Habilitado','http://192.168.1.38:8888/wsadmin/img/jugomaracuya.png','1'),
+                                     ('','Frappe de Frutilla','Deliciosos frappes que mejorarán tu día!!','10','17-10-2016','Habilitado','http://192.168.1.38:8888/wsadmin/img/jugofrutilla.png','1')";
 
         if (mysqli_query($con, $ADD_PRODUCTO_TEST)) {
           # code...
-          echo "<br> -- PRODUCTOS INSERTADOS -- ";
+          echo "<br> -- PRODUCTOS INSERTADOS -- <br>";
         }
       }
 
+      /** TABLA PROMOCION **/
+      $TB_PROMOCION = "CREATE TABLE promocion (
+          idPromocion INT NOT NULL AUTO_INCREMENT,
+          codigo VARCHAR(24),
+          nombre VARCHAR(24),
+          descripcion TEXT,
+          precio DECIMAL(18,2),
+          fechaInicio DATE,
+          fechaFin DATE,
+          imagen TEXT,
+          fecha DATETIME,
+          estado VARCHAR(18),
+          PRIMARY KEY(idPromocion)
+        )";
 
-      
-    /** TABLA PROMOCION **/
-    $TB_PROMOCION = "CREATE TABLE promocion (
-        idPromocion INT NOT NULL AUTO_INCREMENT,
-        codigo VARCHAR(24),
-        nombre VARCHAR(24),
-        descripcion TEXT,
-        precio DECIMAL(18,2),
-        fechaInicio DATE,
-        fechaFin DATE,
-        imagen TEXT,
-        fecha DATETIME,
-        estado VARCHAR(18),
-        PRIMARY KEY(idPromocion)
-      )";
-
-    if (mysqli_query($con,$TB_PROMOCION)) {
-      # code...
-      echo "<br> -- TABLA PROMOCION CREADA --";
-      $ADD_PROMOCION_TEST = "INSERT INTO promocion(idPromocion,codigo,nombre,descripcion,precio,fechaInicio,fechaFin,imagen,fecha,estado)
-                              VALUES ('','DP-01','Dia dde la madre','mamá','150','03/10/2016','16/10/2016','http://localhost/sw/img/promocion.jpg','0000-00-00','Habilitado')";
-
-      if (mysqli_query($con, $ADD_PROMOCION_TEST)) {
+      if (mysqli_query($con,$TB_PROMOCION)) {
         # code...
-        echo "<br> -- PROMOCION INSERTADOS -- ";
+        echo "<br> -- TABLA PROMOCION CREADA --";
+        $ADD_PROMOCION_TEST = "INSERT INTO promocion(idPromocion,codigo,nombre,descripcion,precio,fechaInicio,fechaFin,imagen,fecha,estado)
+                               VALUES ('','DP-01','Dia dde la madre','mamá','15','17-10-2016','22-10-2016','http://192.168.1.38:8888/wsadmin/img/promocion.jpg','17-10-2016','Habilitado')";
+        if (mysqli_query($con, $ADD_PROMOCION_TEST)) {
+          # code...
+          echo "<br> -- PROMOCION INSERTADOS -- <br>";
+        }
       }
-    }
+
       /** TABLA PRODUCTO PROMOCION **/
       $TB_PRODUCTO_PROMOCION = "CREATE TABLE productoPromocion (
         idProductoPromocion INT NOT NULL AUTO_INCREMENT,
-        cantidad VARCHAR(24),
+        cantidad INT,
         promocionIdPromocion INT,
         productoIdProducto INT,
         PRIMARY KEY(idProductoPromocion)
@@ -181,10 +178,99 @@
       if (mysqli_query($con,$TB_PRODUCTO_PROMOCION)) {
         # code...
         echo "<br> -- TABLA PRODUCTO PROMOCION CREADA --";
+        $ADD_PRODUCT_PROMOCION_TEST = "INSERT INTO productoPromocion(idProductoPromocion, cantidad, promocionIdPromocion, productoIdProducto)
+                                       VALUES ('','1','1','1'),
+                                              ('','1','1','2')";
+        if (mysqli_query($con, $ADD_PRODUCT_PROMOCION_TEST)) {
+          # code...
+          echo "<br> -- PRODUCTO PROMOCION INSERTADOS -- <br>";
+        }
 
       }
-  }
-    
+
+      /** TABLA ESTADO **/
+      $TB_ESTADO = "CREATE TABLE estado (
+        idEstado INT NOT NULL AUTO_INCREMENT,
+        parametro INT,
+        nombre VARCHAR(28),
+        PRIMARY KEY(idEstado)
+      )";
+
+      if (mysqli_query($con,$TB_ESTADO)) {
+        # code...
+        echo "<br> -- TABLA ESTADO CREADA --";
+        $ADD_ESTADO_TEST = "INSERT INTO estado(idEstado,parametro,nombre)
+                             VALUES ('','1','DISPONIBLE'),
+                                    ('','2','RESERVADO'),
+                                    ('','3','RECIBIDO'),
+                                    ('','4','RECHAZADO'),
+                                    ('','5','EN PROCESO'),
+                                    ('','6','DESPACHADO')";
+        if (mysqli_query($con, $ADD_ESTADO_TEST)) {
+          # code...
+          echo "<br> -- ESTADOS INSERTADOS -- <br>";
+        }
+      }
+
+      /** TABLA PEDIDO **/
+      $TB_PEDIDO = "CREATE TABLE pedido (
+        idPedido INT NOT NULL AUTO_INCREMENT,
+        fecha DATETIME,
+        usuarioIdUsuario INT,
+        PRIMARY KEY(idPedido)
+      )";
+
+      if (mysqli_query($con,$TB_PEDIDO)) {
+        # code...
+        echo "<br> -- TABLA PEDIDO CREADA --";
+        $ADD_PEDIDO_TEST = "INSERT INTO pedido(idPedido,fecha,usuarioIdUsuario)
+                            VALUES ('','17-10-2016','4')";
+        if (mysqli_query($con, $ADD_PEDIDO_TEST)) {
+          # code...
+          echo "<br> -- PEDIDO INSERTADOS -- <br>";
+        }
+      }
+
+      /** TABLA PEDIDO PRODUCTO **/
+      $TB_PEDIDO_PRODUCTO = "CREATE TABLE pedidoProducto (
+        idPedidoProducto INT NOT NULL AUTO_INCREMENT,
+        pedidoIdPedido INT,
+        productoIdProducto INT,
+        cantidad INT,
+        PRIMARY KEY(idPedidoProducto)
+      )";
+
+      if (mysqli_query($con,$TB_PEDIDO_PRODUCTO)) {
+        # code...
+        echo "<br> -- TABLA PEDIDO PRODUCTO CREADA --";
+        $ADD_PEDIDO_PRODUCTO_TEST = "INSERT INTO pedidoProducto(idPedidoProducto,pedidoIdPedido,productoIdProducto,cantidad)
+                                     VALUES ('','1','2','1'),('','1','3','2')";
+        if (mysqli_query($con, $ADD_PEDIDO_PRODUCTO_TEST)) {
+          # code...
+          echo "<br> -- PEDIDO PRODUCTO INSERTADOS -- <br>";
+        }
+      }
+
+      /** TABLA ESTADOPEDIDO **/
+      $TB_ESTADOPEDIDO= "CREATE TABLE estadoPedido (
+        idEstadoPedido INT NOT NULL AUTO_INCREMENT,
+        pedidoIdPedido INT,
+        estadoIdEstado INT,
+        PRIMARY KEY(idEstadoPedido)
+      )";
+
+      if (mysqli_query($con,$TB_ESTADOPEDIDO)) {
+        # code...
+        echo "<br> -- TABLA ESTADO PEDIDO CREADA --";
+        $ADD_PEDIDO_TEST = "INSERT INTO estadoPedido(idEstadoPedido,pedidoIdPedido,estadoIdEstado)
+                             VALUES ('','1','3')";
+        if (mysqli_query($con, $ADD_PEDIDO_TEST)) {
+          # code...
+          echo "<br> -- ESTADO PEDIDO INSERTADOS -- <br>";
+        }
+      }
+    }
+
     mysqli_close($con);
   }
 
