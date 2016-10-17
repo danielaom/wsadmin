@@ -142,7 +142,7 @@
       }
 
 
-      
+
     /** TABLA PROMOCION **/
     $TB_PROMOCION = "CREATE TABLE promocion (
         idPromocion INT NOT NULL AUTO_INCREMENT,
@@ -184,7 +184,109 @@
 
       }
   }
-    
+
+  /** TABLA ESTADO **/
+  $TB_ESTADO = "CREATE TABLE estado (
+    idEstado INT NOT NULL AUTO_INCREMENT,
+    parametro INT,
+    nombre VARCHAR(28),
+    PRIMARY KEY(idEstado)
+  )";
+
+  if (mysqli_query($con,$TB_ESTADO)) {
+    # code...
+    echo "<br><br> -- TABLA ESTADO CREADA --";
+    $ADD_ESTADO_TEST = "INSERT INTO estado(idEstado,parametro,nombre)
+                         VALUES ('','1,DISPONIBLE'),
+                         VALUES ('','2,RESERVADO'),
+                         VALUES ('','3,RECIBIDO'),
+                         VALUES ('','4,RECHAZADO'),
+                         VALUES ('','5,EN PROCESO'),
+                         VALUES ('','6,DESPACHADO')";
+    if (mysqli_query($con, $ADD_ESTADO_TEST)) {
+      # code...
+      echo "<br> -- ESTADO INSERTADOS -- <br>";
+    }
+  }
+
+  /** TABLA PEDIDO **/
+  $TB_PEDIDO = "CREATE TABLE pedido (
+    idPedido INT NOT NULL AUTO_INCREMENT,
+    fecha DATETIME,
+    usuarioIdUsuario INT,
+    PRIMARY KEY(idPedido)
+  )";
+
+  if (mysqli_query($con,$TB_PEDIDO)) {
+    # code...
+    echo "<br><br> -- TABLA PEDIDO CREADA --";
+    $ADD_PEDIDO_TEST = "INSERT INTO pedido(idPedido,fecha,usuarioIdUsuario)
+                         VALUES ('','25/05/2016','4')";
+    if (mysqli_query($con, $ADD_PEDIDO_TEST)) {
+      # code...
+      echo "<br> -- PEDIDO INSERTADOS -- <br>";
+    }
+  }
+
+  /** TABLA PEDIDOPRODUCTO **/
+  $TB_PEDIDOPRODUCTO = "CREATE TABLE pedidoproducto (
+    idPedidoProducto INT NOT NULL AUTO_INCREMENT,
+    pedidoIdPedido INT,
+    productoIdProducto INT,
+    PRIMARY KEY(idPedidoProducto)
+  )";
+
+  if (mysqli_query($con,$TB_PEDIDO)) {
+    # code...
+    echo "<br><br> -- TABLA PEDIDO CREADA --";
+    $ADD_PEDIDO_TEST = "INSERT INTO pedido(idPedido,pedidoIdPedido,)
+                         VALUES ('','25/05/2016','4')";
+    if (mysqli_query($con, $ADD_PEDIDO_TEST)) {
+      # code...
+      echo "<br> -- PEDIDO INSERTADOS -- <br>";
+    }
+  }
+
+  /** TABLA PEDIDOPRODUCTO **/
+  $TB_PEDIDOPRODUCTO = "CREATE TABLE pedidoproducto (
+    idPedidoProducto INT NOT NULL AUTO_INCREMENT,
+    productoIdProducto INT,
+    pedidoIdPedido INT,
+    PRIMARY KEY(idPedidoProducto)
+  )";
+
+  if (mysqli_query($con,$TB_PEDIDOPRODUCTO)) {
+    # code...
+    echo "<br><br> -- TABLA PEDIDOPRODUCTO CREADA --";
+    $ADD_PEDIDOPRODUCTO_TEST = "INSERT INTO pedidoproducto(idPedidoProducto,productoIdProducto,pedidoIdProducto)
+                         VALUES ('','1','4')";
+    if (mysqli_query($con, $ADD_PEDIDO_TEST)) {
+      # code...
+      echo "<br> -- PEDIDO INSERTADOS -- <br>";
+    }
+  }
+
+  /** TABLA ESTADOPEDIDO **/
+  $TB_ESTADOPEDIDO= "CREATE TABLE estadopedido (
+    idEstadoPedido INT NOT NULL AUTO_INCREMENT,
+    pedidoIdPedido INT,
+    estadoIdEstado INT,
+    PRIMARY KEY(idEstadoPedido)
+  )";
+
+  if (mysqli_query($con,$TB_EstadoPedido)) {
+    # code...
+    echo "<br><br> -- TABLA ESTADOPEDIDO CREADA --";
+    $ADD_PEDIDO_TEST = "INSERT INTO pedido(idPedido,fecha,usuarioIdUsuario)
+                         VALUES ('','25/05/2016,4')";
+    if (mysqli_query($con, $ADD_PEDIDO_TEST)) {
+      # code...
+      echo "<br> -- PEDIDO INSERTADOS -- <br>";
+    }
+  }
+
+
+
     mysqli_close($con);
   }
 

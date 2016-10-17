@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 if (!isset($_SESSION['loggedin'])){
@@ -9,28 +8,35 @@ if (!isset($_SESSION['loggedin'])){
 	<head>
 		<meta charset="utf-8"   name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Sweet stop</title>
-		<link rel="shortcut icon" href="img/favicon.ico">
+		<link rel="shortcut icon" href="../img/favicon.ico">
 		<meta name="description" content="Bootstrap Metro Dashboard">
 		<meta name="author" content="Daniela Orellana">
 		<meta name="keyword" content="">
 		<meta name="viewport" role="navigation"  class="navbar navbar-default" content="width=device-width, initial-scale=1" >
-		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="../css/bootstrap.css" rel="stylesheet">
 
-<link rel="stylesheet" href="css/flexslider.css" >
-<link rel="stylesheet" href="css/styleSlider.css" >
-<script type="text/javascript" src="js/modernizr.custom.28468.js"></script>
-<script src="js/flexslider-min.js.js"></script>
-<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-
-		<script src="js/jquery-1.9.1.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 
 
-			<link rel="stylesheet" href="css/flexslider.css" type="text/css">
-			<script src="js/jquery.min.js"></script>
+
+<link rel="stylesheet" href="../css/flexslider.css" >
+<link rel="stylesheet" href="../css/styleSlider.css" >
+<script type="text/javascript" src="../js/modernizr.custom.28468.js"></script>
+<script src="../js/flexslider-min.js.js"></script>
+<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+
+		<script src="../js/jquery-1.9.1.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+
+
+
+			<link rel="stylesheet" href="../css/flexslider.css" type="text/css">
+			<script src="../js/jquery.min.js"></script>
 			<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-			<script src="js/jquery.flexslider.js"></script>
+			<script src="../js/jquery.flexslider.js"></script>
 			<script type="text/javascript" charset="utf-8">
 		  $(window).load(function() {
 		    $('.flexslider').flexslider({
@@ -81,19 +87,19 @@ if (!isset($_SESSION['loggedin'])){
 	<div class="flexslider">
 			<ul class="slides">
 				<li>
-					<img src="img/1.png" alt="">
+					<img src="../img/1.png" alt="">
 					<section class="flex-caption">
 
 					</section>
 				</li>
 				<li>
-					<img src="img/2.jpg" alt="">
+					<img src="../img/2.jpg" alt="">
 					<section class="flex-caption">
 
 					</section>
 				</li>
 				<li>
-					<img src="img/3.jpg" alt="">
+					<img src="../img/3.jpg" alt="">
 					<section class="flex-caption">
 
 					</section>
@@ -153,12 +159,12 @@ if (!isset($_SESSION['loggedin'])){
 		<title>Sweet stop</title>
 		<meta name="description" content="Bootstrap Metro Dashboard">
 		<meta name="author" content="Daniela Orellana">
-		<link rel="shortcut icon" href="img/favicon.ico">
+		<link rel="shortcut icon" href="../img/favicon.ico">
 		<meta name="keyword" content="">
 		<meta name="viewport" role="navigation"  class="navbar navbar-default" content="width=device-width, initial-scale=1" >
-		<link href="css/bootstrap.css" rel="stylesheet">
-		<script src="js/jquery-1.9.1.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<link href="../css/bootstrap.css" rel="stylesheet">
+		<script src="../js/jquery-1.9.1.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
 
 	</head>
 
@@ -180,23 +186,23 @@ if (!isset($_SESSION['loggedin'])){
 
 				<!-- Administrador -->
 				<?php if ($_SESSION['tipo_usuario'] == 1):?>
-					<link rel="shortcut icon" href="img/favicon.ico">
-					<li class="active"><a href="index.php">Inicio</a></li>
-					<li><a href="vista/registro_usuario.php">Usuarios</a></li>
+					<link rel="shortcut icon" href="../img/favicon.ico">
+					<li class="active"><a href="../index.php">Inicio</a></li>
+					<li><a href="../vista/registro_usuario.php">Usuarios</a></li>
 
 					<li class="dropdown-submenu"><a href="#" tabindex="-1" data-toggle="dropdown">Menú</a>
 						<ul class="dropdown-menu">
-							<li><a href="vista/registro_categoria.php" tabindex="-1">Categorias</a></li>
-							<li><a href="vista/registro_producto.php" tabindex="-1">Productos</a></li>
-							<li><a href="vista/registro_promocion.php" tabindex="-1">Promociones</a></li>
+							<li><a href="../vista/registro_categoria.php" tabindex="-1">Categorias</a></li>
+							<li><a href="../vista/registro_producto.php" tabindex="-1">Productos</a></li>
+							<li><a href="../vista/registro_promocion.php" tabindex="-1">Promociones</a></li>
 						</ul>
 					</li>
 
 					<li class="dropdown-submenu"><a href="#" tabindex="-1" data-toggle="dropdown">Reportes</a>
 						<ul class="dropdown-menu">
-							<li><a href="vista/reporte_cliente.php" tabindex="-1">Clientes</a></li>
-							<li><a href="vista/reporte_producto.php" tabindex="-1">Productos</a></li>
-							<li><a href="vista/reporte_venta.php" tabindex="-1">Ventas</a></li>
+							<li><a href="../vista/reporte_cliente.php" tabindex="-1">Clientes</a></li>
+							<li><a href="../vista/reporte_producto.php" tabindex="-1">Productos</a></li>
+							<li><a href="../vista/reporte_venta.php" tabindex="-1">Ventas</a></li>
 						</ul>
 					</li>
 				<?php endif; ?>
@@ -215,33 +221,33 @@ if (!isset($_SESSION['loggedin'])){
 								<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 								<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 
-					<li><a href="index.php">
-						<img src="img/minicio.png" class="img-rounded" alt="bordes redondeados">
+					<li><a href="../index.php">
+						<img src="../img/minicio.png" class="img-rounded" alt="bordes redondeados">
 					<center><p>Inicio</p></center>
 				</a></li>
 
-					<li><a href="vista/registro_cliente.php">
-						<img src="img/mcliente.png" class="img-rounded" alt="bordes redondeados">
+					<li><a href="../vista/registro_cliente.php">
+						<img src="../img/mcliente.png" class="img-rounded" alt="bordes redondeados">
 					<center><p>Clientes</p></center>
 				</a></li>
 
-				<li><a href="vista/vender.php">
-					<img src="img/mvender.png" class="img-rounded" alt="bordes redondeados">
-				<center><p>Vender</p></center>
-			</a></li>
+        <li><a href="../vista/vender.php">
+          <img src="../img/mvender.png" class="img-rounded" alt="bordes redondeados">
+        <center><p>Vender</p></center>
+        </a></li>
 
-			<li><a href="vista/pedidos.php">
-				<img src="img/mpedido.png" class="img-rounded" alt="bordes redondeados">
+			<li><a href="../vista/pedidos.php">
+				<img src="../img/mpedido.png" class="img-rounded" alt="bordes redondeados">
 			<center><p>Pedidos</p></center>
 		</a></li>
 
-		<li><a href="vista/reservas.php">
-			<img src="img/mreservas.png" class="img-rounded" alt="bordes redondeados">
+		<li><a href="../vista/reservas.php">
+			<img src="../img/mreservas.png" class="img-rounded" alt="bordes redondeados">
 		<center><p>Reservas</p></center>
 	</a></li>
 
-		<li><a href="vista/ventas.php">
-			<img src="img/mventas.png" class="img-rounded" alt="bordes redondeados">
+		<li><a href="../vista/ventas.php">
+			<img src="../img/mventas.png" class="img-rounded" alt="bordes redondeados">
 		<center><p>Ventas</p></center>
 	</a></li>
 
@@ -251,15 +257,36 @@ if (!isset($_SESSION['loggedin'])){
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li data-toggle="modal" data-target="#loginModal">
-					<a href="logout.php "><span class="glyphicon glyphicon-log-out"></span> Cerrar sesión</a>
+					<a href="../logout.php "><span class="glyphicon glyphicon-log-out"></span> Cerrar sesión</a>
 				</li>
 			</ul>
 
 		</div>
 	</nav>
 
-	<div align="center"><IMG SRC="img/1.png" WIDTH=1360 HEIGHT=400    srcset="img/1.png 2x"></div>
+<ul class="nav nav-tabs" role="tablist">
 
-	</body>
-	</html>
+
+  <?php
+  include_once("../BD/conexion.php");
+  $cnn= new conexion();
+  $con =$cnn->conectar();
+  mysqli_select_db($con,"restaurante");
+  $queryRoles="SELECT idCategoria,nombre FROM categoria";
+  $getAll = mysqli_query($con,$queryRoles);
+  while($row = mysqli_fetch_array($getAll, MYSQLI_ASSOC)){ ?>
+
+  <li value="<?php echo $row['idCategoria']; ?>" ><a href="#hometab" role="tab" data-toggle="tab"><?php echo $row['nombre']; ?></a></li>
+<?php }?>
+</ul>
+</li>
+
+<!-- Tab panes -->
+<div class="tab-content">
+
+
+</div>
+
+</body>
+</html>
 <?php }?>

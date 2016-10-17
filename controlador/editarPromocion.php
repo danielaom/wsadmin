@@ -24,7 +24,7 @@ if (mysqli_connect_errno())
         # code...
         $choose = $_FILES['imagen']['name'];
 
-        $image = "http://localhost/sw/img/".$choose;
+        $image = "http://192.168.1.34:80/sw/img/".$choose;
         $imageDir = "../img/".$choose;
 
         move_uploaded_file($_FILES['imagen']['tmp_name'],$imageDir);

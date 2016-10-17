@@ -43,7 +43,6 @@ if (!isset($_SESSION['loggedin'])) {
                 <link rel="shortcut icon" href="img/favicon.ico">
                 <li><a href="../index.php">Inicio</a></li>
                 <li><a href="registro_usuario.php">Usuarios</a></li>
-
                 <li class="active" class="dropdown-submenu"><a href="#" tabindex="-1" data-toggle="dropdown">Menú</a>
                     <ul class="dropdown-menu">
                         <li><a href="registro_categoria.php" tabindex="-1">Categorias</a></li>
@@ -51,7 +50,6 @@ if (!isset($_SESSION['loggedin'])) {
                         <li><a href="mostrar_promocion.php" tabindex="-1">Promociones</a></li>
                     </ul>
                 </li>
-
                 <li class="dropdown-submenu"><a href="#" tabindex="-1" data-toggle="dropdown">Reportes</a>
                     <ul class="dropdown-menu">
                         <li><a href="reporte_cliente.php" tabindex="-1">Clientes</a></li>
@@ -60,7 +58,6 @@ if (!isset($_SESSION['loggedin'])) {
                     </ul>
                 </li>
             <?php endif; ?>
-
             <?php if ($_SESSION['tipo_usuario'] == 2):?>
                 <li class="active"><a href="#">Inicio</a></li>
                 <li><a href="vista/registro_cliente.php">Clientes</a></li>
@@ -119,7 +116,7 @@ if (!empty($_GET['show'])) {
                             <br />
                             <div class="card-content" id="mdialTamanio">
                                 <h4 class="card-title">
-                                    <a href="http://www.fostrap.com/">
+                                    <a>
                                         <?php echo $DATA['nombre'];?>
                                     </a>
                                 </h4>
