@@ -13,9 +13,12 @@ if (!isset($_SESSION['loggedin'])){
 		<link rel="shortcut icon" href="../img/favicon.ico">
 		<meta name="keyword" content="">
 		<meta name="viewport" role="navigation"  class="navbar navbar-default" content="width=device-width, initial-scale=1" >
-		<link href="../css/bootstrap.css" rel="stylesheet">
 		<script src="../js/jquery-1.9.1.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
+	 <link rel="stylesheet" href="../css/bootstrap.min.css" >
+	 <script src="../js/jquery.min.js"></script>
+<script type='text/javascript' src='../js/chosen.jquery.min.js'></script>
+<link rel="stylesheet" type="text/css" href="../css/chosen.min.css" />
 
 	</head>
 
@@ -114,33 +117,85 @@ if (!isset($_SESSION['loggedin'])){
 
 		</div>
 	</nav>
-
-<ul class="nav nav-tabs" role="tablist">
+  <div class="col-md-4">
+		</div>
+		<div class="col-md-8">
 
 
   <?php
-	  include_once("../BD/conexion.php");
-	  $cnn= new conexion();
-	  $con =$cnn->conectar();
-	  mysqli_select_db($con,"restaurante");
-	  $queryRoles="SELECT * FROM categoria";
-	  $getAll = mysqli_query($con,$queryRoles);
-	  while($row = mysqli_fetch_array($getAll, MYSQLI_ASSOC)){
+	include_once("../BD/conexion.php");
+	$cnn= new conexion();
+	$con =$cnn->conectar();
+	mysqli_select_db($con,"restaurante");
+
 	?>
 
-  <li value="<?php echo $row['idCategoria']; ?>" ><a href="#hometab" role="tab" data-toggle="tab"><?php echo $row['nombre']; ?></a></li>
-	<?php
-		}	
-		mysql_close($con);
-	?>
-</ul>
-</li>
+<select class = "categoria" name="categoria" id="categoria" style="width:200px;">
 
-<!-- Tab panes -->
-<div class="tab-content">
+<?php	$queryRoles="SELECT * FROM categoria";
+	$getAll = mysqli_query($con,$queryRoles);
+	while($row = mysqli_fetch_array($getAll, MYSQLI_ASSOC)){?>
+    <option value="<?php echo $row['idCategoria']; ?>"><?php echo $row['nombre']; ?></option>
+  <?php }?>
+</select>
+<br><br>
+
+																<table   class="table table-striped table-condensed voc_list producto responsive " name="producto" id="producto" style="width:200px;">
+																		<thead>
+																				<tr>
+																						<th ></th>
+																				</tr>
+																		</thead>
+																		<tbody>
+																				<tr class="listview">
+																				<td  >
+
+
+																						<br />
+
+																				</td>
+
+
+
+
+<script type="text/javascript">
+      $(document).ready(function(){
+        $(".categoria").change(function(){
+          var id=$(this).val();
+          var paramid = 'id='+ id;
+
+					//alert(id);
+
+          $.ajax({
+            type: "POST",
+            url: "../controlador/seleccionarProducto.php",
+            data: paramid,
+            cache: false,
+            success: function(html){
+              $(".producto").html(html);
+            }
+          });
+        });
+      });
+    </script>
+
+
+
+
+
+
+
+
+    </div>
+</body>
+</html>
+
 
 
 </div>
+<script>
+    $('#categoria').chosen();
+</script>
 
 </body>
 </html>

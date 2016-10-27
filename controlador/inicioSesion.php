@@ -1,7 +1,5 @@
 <?php
-    include_once("../BD/conexion.php");
-    $cnn= new conexion();
-    $con =$cnn->conectar();
+      $con = mysqli_connect("localhost","root","","restaurante");
 
     if (mysqli_select_db($con,"restaurante")) {
       # code...

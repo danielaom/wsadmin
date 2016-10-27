@@ -95,7 +95,7 @@
                               <h4><i class="halflings-icon user"></i><span class="break"></span>Lista categorias</h4>
                               <div class="box-icon">
 
-                                  <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
+                                  <a href="#" class="btn-minimize"><i class="halflings-icon glyphicon glyphicon-search"></i></a>
 
                               </div>
                           </div>

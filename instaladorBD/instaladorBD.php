@@ -130,9 +130,9 @@
         # code...
         echo "<br> -- TABLA PRODUCTO CREADA --";
         $ADD_PRODUCTO_TEST = "INSERT INTO producto(idProducto,nombre,descripcion,precio,fecha,estado,imagen,categoriaIdCategoria)
-                              VALUES ('','Frappuccino','Siente el dulce sabor del cafe en Sweet Stop','10','17-10-2016','Habilitado','http://192.168.1.38:8888/wsadmin/img/frappuccino.png','1'),
-                                     ('','Frappe de Maracuya','El sabor exótico de Maracuyá lo tenemos al paso!!','10','17-10-2016','Habilitado','http://192.168.1.38:8888/wsadmin/img/jugomaracuya.png','1'),
-                                     ('','Frappe de Frutilla','Deliciosos frappes que mejorarán tu día!!','10','17-10-2016','Habilitado','http://192.168.1.38:8888/wsadmin/img/jugofrutilla.png','1')";
+                              VALUES ('','Frappuccino','Siente el dulce sabor del cafe en Sweet Stop','10','17-10-2016','Habilitado','http://192.168.1.36:80/sw/img/frappuccino.png','1'),
+                                     ('','Frappe de Maracuya','El sabor exótico de Maracuyá lo tenemos al paso!!','10','17-10-2016','Habilitado','http://192.168.1.36:80/sw/img/jugomaracuya.png','1'),
+                                     ('','Frappe de Frutilla','Deliciosos frappes que mejorarán tu día!!','10','17-10-2016','Habilitado','http://192.168.1.38:80/sw/img/jugofrutilla.png','1')";
 
         if (mysqli_query($con, $ADD_PRODUCTO_TEST)) {
           # code...
@@ -159,7 +159,7 @@
         # code...
         echo "<br> -- TABLA PROMOCION CREADA --";
         $ADD_PROMOCION_TEST = "INSERT INTO promocion(idPromocion,codigo,nombre,descripcion,precio,fechaInicio,fechaFin,imagen,fecha,estado)
-                               VALUES ('','DP-01','Dia dde la madre','mamá','15','17-10-2016','22-10-2016','http://192.168.1.38:8888/wsadmin/img/promocion.jpg','17-10-2016','Habilitado')";
+                               VALUES ('','DP-01','Dia dde la madre','mamá','15','17-10-2016','22-10-2016','http://192.168.1.36:80/sw/img/promocion.jpg','17-10-2016','Habilitado')";
         if (mysqli_query($con, $ADD_PROMOCION_TEST)) {
           # code...
           echo "<br> -- PROMOCION INSERTADOS -- <br>";

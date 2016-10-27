@@ -13,6 +13,7 @@ if (!isset($_SESSION['loggedin'])) {
     <meta name="description" content="Bootstrap Metro Dashboard">
     <meta name="author" content="Daniela Orellana">
     <link rel="shortcut icon" href="img/favicon.ico">
+
     <meta name="keyword" content="">
     <meta name="viewport" role="navigation" class="navbar navbar-default" content="width=device-width, initial-scale=1">
     <link href="../css/bootstrap.css" rel="stylesheet">
@@ -371,7 +372,7 @@ if (!empty($_GET['show'])) {
                                     <label class="control-label">*Categoria</label>
                                     <div class="select">
 
-                                        <select id="categoria" name="categoria" class="form-control">
+                                        <select id="categoria" name="categoria"  class="selectpicker" data-style="btn-primary">
                                             <option value="0">Seleccione categoria...</option>
                                             <?php
                                             $queryRoles="SELECT idCategoria,nombre FROM categoria";
@@ -383,6 +384,8 @@ if (!empty($_GET['show'])) {
 
                                     </div>
                                 </div>
+
+                                
                                 <div class="form-group">
 
                                     <label class="control-label"></label>
