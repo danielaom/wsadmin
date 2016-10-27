@@ -133,6 +133,7 @@
                               VALUES ('','Frappuccino','Siente el dulce sabor del cafe en Sweet Stop','10','17-10-2016','Habilitado','http://192.168.1.36:80/sw/img/frappuccino.png','1'),
                                      ('','Frappe de Maracuya','El sabor exótico de Maracuyá lo tenemos al paso!!','10','17-10-2016','Habilitado','http://192.168.1.36:80/sw/img/jugomaracuya.png','1'),
                                      ('','Frappe de Frutilla','Deliciosos frappes que mejorarán tu día!!','10','17-10-2016','Habilitado','http://192.168.1.38:80/sw/img/jugofrutilla.png','1')";
+                            
 
         if (mysqli_query($con, $ADD_PRODUCTO_TEST)) {
           # code...
@@ -205,7 +206,8 @@
                                     ('','3','RECIBIDO'),
                                     ('','4','RECHAZADO'),
                                     ('','5','EN PROCESO'),
-                                    ('','6','DESPACHADO')";
+                                    ('','6','DESPACHADO'),
+                                    ('','7','NUEVO')";
         if (mysqli_query($con, $ADD_ESTADO_TEST)) {
           # code...
           echo "<br> -- ESTADOS INSERTADOS -- <br>";
@@ -215,16 +217,18 @@
       /** TABLA PEDIDO **/
       $TB_PEDIDO = "CREATE TABLE pedido (
         idPedido INT NOT NULL AUTO_INCREMENT,
+        codigo VARCHAR(10),
         fecha DATETIME,
         usuarioIdUsuario INT,
+        estadoIdEstado INT,
         PRIMARY KEY(idPedido)
       )";
 
       if (mysqli_query($con,$TB_PEDIDO)) {
         # code...
         echo "<br> -- TABLA PEDIDO CREADA --";
-        $ADD_PEDIDO_TEST = "INSERT INTO pedido(idPedido,fecha,usuarioIdUsuario)
-                            VALUES ('','17-10-2016','4')";
+        $ADD_PEDIDO_TEST = "INSERT INTO pedido(idPedido,codigo,fecha,usuarioIdUsuario,estadoIdEstado)
+                            VALUES ('','AbcDES','17-10-2016 00:00:00','6','7')";
         if (mysqli_query($con, $ADD_PEDIDO_TEST)) {
           # code...
           echo "<br> -- PEDIDO INSERTADOS -- <br>";
@@ -251,25 +255,130 @@
         }
       }
 
-      /** TABLA ESTADOPEDIDO **/
-      $TB_ESTADOPEDIDO= "CREATE TABLE estadoPedido (
-        idEstadoPedido INT NOT NULL AUTO_INCREMENT,
-        pedidoIdPedido INT,
-        estadoIdEstado INT,
-        PRIMARY KEY(idEstadoPedido)
+      /** TABLA ESTADO PEDIDO **/
+      // $TB_ESTADOPEDIDO = "CREATE TABLE estadoPedido (
+      //   idEstadoPedido INT NOT NULL AUTO_INCREMENT,
+      //   pedidoIdPedido INT,
+      //   estadoIdEstado INT,
+      //   PRIMARY KEY(idEstadoPedido)
+      // )";
+      //
+      // if (mysqli_query($con,$TB_ESTADOPEDIDO)) {
+      //   # code...
+      //   echo "<br> -- TABLA ESTADO PEDIDO CREADA --";
+      //   $ADD_PEDIDO_TEST = "INSERT INTO estadoPedido(idEstadoPedido,pedidoIdPedido,estadoIdEstado)
+      //                        VALUES ('','1','3')";
+      //   if (mysqli_query($con, $ADD_PEDIDO_TEST)) {
+      //     # code...
+      //     echo "<br> -- ESTADO PEDIDO INSERTADOS -- <br>";
+      //   }
+      // }
+
+
+
+ /** TABLA Mesa **/
+      $TB_MESA = "CREATE TABLE mesa (
+        idMesa INT NOT NULL AUTO_INCREMENT,
+        numeroMesa INT,
+        PRIMARY KEY(idMesa)
       )";
 
-      if (mysqli_query($con,$TB_ESTADOPEDIDO)) {
+      if (mysqli_query($con,$TB_MESA)) {
         # code...
-        echo "<br> -- TABLA ESTADO PEDIDO CREADA --";
-        $ADD_PEDIDO_TEST = "INSERT INTO estadoPedido(idEstadoPedido,pedidoIdPedido,estadoIdEstado)
-                             VALUES ('','1','3')";
-        if (mysqli_query($con, $ADD_PEDIDO_TEST)) {
+        echo "<br> -- TABLA MESA CREADA --";
+        $ADD_MESA_TEST = "INSERT INTO mesa(idMesa,numeroMesa)
+                             VALUES ('','1'),
+                                    ('','2'),
+                                    ('','3'),
+                                    ('','4'),
+                                    ('','5'),
+                                    ('','6'),
+                                    ('','7'),
+                                    ('','8')";
+        if (mysqli_query($con, $ADD_ESTADO_TEST)) {
           # code...
-          echo "<br> -- ESTADO PEDIDO INSERTADOS -- <br>";
+          echo "<br> -- MESAS INSERTADOS -- <br>";
         }
       }
+
+
+       /** TABLA EstadoMesa **/
+      $TB_MESA = "CREATE TABLE estadomesa (
+        idEstadoMesa INT NOT NULL AUTO_INCREMENT,
+        fechaInicio DATETIME,
+        fechaFin DATETIME,
+        estadoIdEstado INT,
+        mesaIdMesa INT,
+        PRIMARY KEY(idEstadoMesa)
+      )";
+
+      if (mysqli_query($con,$TB_ESTADOMESA)) {
+        # code...
+        echo "<br> -- TABLA ESTADOMESA CREADA --";
+        $ADD_MESA_TEST = "INSERT INTO estadomesa(idEstadoMesa,fechaInicio,fechaFin,estadoIdEstado,mesaIdMesa)
+                             VALUES ('','17-10-2016 01:00:00','17-10-2016 02:00:00','2','1'),
+                                    ('','17-10-2016 03:00:00','17-10-2016 04:00:00','1','2'),
+                                    ('','17-10-2016 04:00:00','17-10-2016 05:00:00','2','3')";
+        if (mysqli_query($con, $ADD_ESTADO_TEST)) {
+          # code...
+          echo "<br> -- MESAS INSERTADOS -- <br>";
+        }
+      }
+
+
+       /** TABLA Reserva **/
+      $TB_MESA = "CREATE TABLE reserva (
+        idReserva INT NOT NULL AUTO_INCREMENT,
+        fecha DATETIME,
+        mesaIdMesa INT,
+        usuarioIdUsuario INT,
+        PRIMARY KEY(idReserva)
+      )";
+
+      if (mysqli_query($con,$TB_RESERVA)) {
+        # code...
+        echo "<br> -- TABLA RESERVA CREADA --";
+        $ADD_MESA_TEST = "INSERT INTO reserva(idReserva,fecha,mesaIdMesa,usuarioIdUsuario)
+                             VALUES ('','17-10-2016 00:00:00','2','4'),
+                                    ('','17-10-2016 00:00:00','3','5'),
+                                    ('','17-10-2016 00:00:00','2','6')";
+        if (mysqli_query($con, $ADD_RESERVA_TEST)) {
+          # code...
+          echo "<br> -- RESERVAS INSERTADOS -- <br>";
+        }
+      }
+
+        /** TABLA EstadoReserva **/
+      $TB_MESA = "CREATE TABLE estado(
+        idEstadoReserva INT NOT NULL AUTO_INCREMENT,
+        fechaInicio DATETIME,
+        fechaFin DATETIME,
+        estadoIdEstado INT,
+        reservaIdReserva INT,
+        PRIMARY KEY(idEstadoReserva)
+      )";
+
+      if (mysqli_query($con,$TB_ESTADORESERVA)) {
+        # code...
+        echo "<br> -- TABLA ESTADORESERVA CREADA --";
+        $ADD_MESA_TEST = "INSERT INTO estadoreserva(idEstadoReserva,fechaInicio,fechaFin,estadoIdEstado,reservaIdReserva)
+                             VALUES ('','17-10-2016 01:00:00','17-10-2016 02:00:00','2','1'),
+                                    ('','17-10-2016 03:00:00','17-10-2016 04:00:00','1','2'),
+                                    ('','17-10-2016 04:00:00','17-10-2016 05:00:00','2','3')";
+        if (mysqli_query($con, $ADD_RESERVA_TEST)) {
+          # code...
+          echo "<br> -- RESERVAS INSERTADOS -- <br>";
+        }
+      }
+
+
+
+
     }
+
+
+
+
 
     mysqli_close($con);
   }

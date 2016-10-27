@@ -120,8 +120,8 @@ if (!isset($_SESSION['loggedin'])){
 		</div>
 	</nav>
 
-<a href="rechazados.php">
-  <div align="right"><img src="../img/rechazados.jpg"></div></a> 
+  <a href="pedidos.php">
+  <div align="right"><img src="../img/pedidos.jpg"></div></a> 
   <div class="col-md-2"></div>
   <div class="col-md-2">
 
@@ -176,139 +176,6 @@ if (!isset($_SESSION['loggedin'])){
   		</div>
 
 
-
-
-    <div class="col-md-2">
-    	<table>
-                <tr>
-                    <td><img src="../img/aceptado.jpg"></td>
-                    <td><h4><i class="halflings-icon user"  ></i><span class="break"></span>Aceptados</h4></td>
-                </tr>
-
-            </table>
-           
-
-
-
-<?php
-                                  include_once("../BD/conexion.php");
-                                  $cnn= new conexion();
-                                  $con =$cnn->conectar();
-                                  mysqli_select_db($con,"restaurante");
-                                  $query_Mostrar = "SELECT * FROM categoria ";
-                                  $getAll = mysqli_query($con, $query_Mostrar);
-                                  while ($row = mysqli_fetch_array($getAll, MYSQLI_ASSOC)):
-                                      ?>
-
-<table class="table table-striped table-bordered" cellspacing="0" width="70px">
-	<tr>
-    <td>  <div class="margin"  >
-          <div class="panel panel-warning">
-            <div class="panel-heading" width="20px" length="50px">
-              <h2 class="panel-title"><?php echo $row ['nombre']; ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              	<button style="text-align:right"  type="button" class="btn btn-default btn-xs btn-round"><span class="glyphicon glyphicon-plus"></span></button></h2>
-            </div>
-            <div class="panel-body">
-              <p><?php echo $row ['nombre']; ?></p>
-            </div>
-            <div class="panel-footer">
-            	
-              <a href="#" class="btn btn-warning">En proceso<span class="glyphicon glyphicon-menu-right"></a>
-            </div>
-          </div>
-        </div></td>
-</tr>
-         <?php endwhile; ?>
-
-</table>
-  		</div>
-
-
- 
-      <div class="col-md-2">
-      	<table>
-                <tr>
-                    <td><img src="../img/proceso.jpg"></td>
-                    <td><h4><i class="halflings-icon user"  ></i><span class="break"></span>En proceso</h4></td>
-                </tr>
-
-            </table>
-        
-       <?php
-                                  include_once("../BD/conexion.php");
-                                  $cnn= new conexion();
-                                  $con =$cnn->conectar();
-                                  mysqli_select_db($con,"restaurante");
-                                  $query_Mostrar = "SELECT * FROM categoria ";
-                                  $getAll = mysqli_query($con, $query_Mostrar);
-                                  while ($row = mysqli_fetch_array($getAll, MYSQLI_ASSOC)):
-                                      ?>
-
-<table class="table table-striped table-bordered" cellspacing="0" width="70px">
-	<tr>
-    <td>  <div class="margin"  >
-          <div class="panel panel-info">
-            <div class="panel-heading" width="20px" length="50px">
-              <h2 class="panel-title"><?php echo $row ['nombre']; ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              	<button style="text-align:right"  type="button" class="btn btn-default btn-xs btn-round"><span class="glyphicon glyphicon-plus"></span></button></h2>
-            </div>
-            <div class="panel-body">
-              <p><?php echo $row ['nombre']; ?></p>
-            </div>
-            <div class="panel-footer">
-            	
-              <a href="#" class="btn btn-info">Despachado<span class="glyphicon glyphicon-menu-right"></a>
-            </div>
-          </div>
-        </div></td>
-</tr>
-         <?php endwhile; ?>
-
-</table>
-  		</div>
-   
-    <div class="col-md-2">
-    		<table>
-                <tr>
-                    <td><img src="../img/desp.jpg"></td>
-                    <td><h4><i class="halflings-icon user"  ></i><span class="break"></span>Despachados</h4></td>
-                </tr>
-
-            </table>
-
-    
-      <?php
-                                  include_once("../BD/conexion.php");
-                                  $cnn= new conexion();
-                                  $con =$cnn->conectar();
-                                  mysqli_select_db($con,"restaurante");
-                                  $query_Mostrar = "SELECT * FROM categoria ";
-                                  $getAll = mysqli_query($con, $query_Mostrar);
-                                  while ($row = mysqli_fetch_array($getAll, MYSQLI_ASSOC)):
-                                      ?>
-
-<table class="table table-striped table-bordered" cellspacing="0" width="70px">
-	<tr>
-    <td>  <div class="margin"  >
-          <div class="panel panel-success">
-            <div class="panel-heading" width="20px" length="50px">
-
-              <h2 class="panel-title"><?php echo $row ['nombre']; ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              	<button style="text-align:right"  type="button" class="btn btn-default btn-xs btn-round"><span class="glyphicon glyphicon-plus"></span></button></h2>
-            </div>
-            <div class="panel-body">
-
-              <p><?php echo $row ['nombre']; ?></p>
-              <br><br>
-            </div>
-            
-          </div>
-        </div></td>
-</tr>
-         <?php endwhile; ?>
-
-</table>
-  		</div>
 <div class="col-md-2"></div>
 
 
