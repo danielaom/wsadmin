@@ -130,9 +130,9 @@
         # code...
         echo "<br> -- TABLA PRODUCTO CREADA --";
         $ADD_PRODUCTO_TEST = "INSERT INTO producto(idProducto,nombre,descripcion,precio,fecha,estado,imagen,categoriaIdCategoria)
-                              VALUES ('','Frappuccino','Siente el dulce sabor del cafe en Sweet Stop','10','17-10-2016','Habilitado','http://192.168.1.38:8888/wsadmin/img/frappuccino.png','1'),
-                                     ('','Frappe de Maracuya','El sabor exótico de Maracuyá lo tenemos al paso!!','10','17-10-2016','Habilitado','http://192.168.1.38:8888/wsadmin/img/jugomaracuya.png','1'),
-                                     ('','Frappe de Frutilla','Deliciosos frappes que mejorarán tu día!!','10','17-10-2016','Habilitado','http://192.168.1.38:8888/wsadmin/img/jugofrutilla.png','1')";
+                              VALUES ('','Frappuccino','Siente el dulce sabor del cafe en Sweet Stop','10','17-10-2016','Habilitado','http://192.168.1.43:8888/wsadmin/img/frappuccino.png','1'),
+                                     ('','Frappe de Maracuya','El sabor exótico de Maracuyá lo tenemos al paso!!','10','17-10-2016','Habilitado','http://192.168.1.43:8888/wsadmin/img/jugomaracuya.png','1'),
+                                     ('','Frappe de Frutilla','Deliciosos frappes que mejorarán tu día!!','10','17-10-2016','Habilitado','http://192.168.1.43:8888/wsadmin/img/jugofrutilla.png','1')";
 
         if (mysqli_query($con, $ADD_PRODUCTO_TEST)) {
           # code...
@@ -205,7 +205,8 @@
                                     ('','3','RECIBIDO'),
                                     ('','4','RECHAZADO'),
                                     ('','5','EN PROCESO'),
-                                    ('','6','DESPACHADO')";
+                                    ('','6','DESPACHADO'),
+                                    ('','7','NUEVO')";
         if (mysqli_query($con, $ADD_ESTADO_TEST)) {
           # code...
           echo "<br> -- ESTADOS INSERTADOS -- <br>";
@@ -215,16 +216,18 @@
       /** TABLA PEDIDO **/
       $TB_PEDIDO = "CREATE TABLE pedido (
         idPedido INT NOT NULL AUTO_INCREMENT,
+        codigo VARCHAR(10),
         fecha DATETIME,
         usuarioIdUsuario INT,
+        estadoIdEstado INT,
         PRIMARY KEY(idPedido)
       )";
 
       if (mysqli_query($con,$TB_PEDIDO)) {
         # code...
         echo "<br> -- TABLA PEDIDO CREADA --";
-        $ADD_PEDIDO_TEST = "INSERT INTO pedido(idPedido,fecha,usuarioIdUsuario)
-                            VALUES ('','17-10-2016','4')";
+        $ADD_PEDIDO_TEST = "INSERT INTO pedido(idPedido,codigo,fecha,usuarioIdUsuario,estadoIdEstado)
+                            VALUES ('','AbcDES','17-10-2016 00:00:00','6','7')";
         if (mysqli_query($con, $ADD_PEDIDO_TEST)) {
           # code...
           echo "<br> -- PEDIDO INSERTADOS -- <br>";
@@ -251,24 +254,24 @@
         }
       }
 
-      /** TABLA ESTADOPEDIDO **/
-      $TB_ESTADOPEDIDO= "CREATE TABLE estadoPedido (
-        idEstadoPedido INT NOT NULL AUTO_INCREMENT,
-        pedidoIdPedido INT,
-        estadoIdEstado INT,
-        PRIMARY KEY(idEstadoPedido)
-      )";
-
-      if (mysqli_query($con,$TB_ESTADOPEDIDO)) {
-        # code...
-        echo "<br> -- TABLA ESTADO PEDIDO CREADA --";
-        $ADD_PEDIDO_TEST = "INSERT INTO estadoPedido(idEstadoPedido,pedidoIdPedido,estadoIdEstado)
-                             VALUES ('','1','3')";
-        if (mysqli_query($con, $ADD_PEDIDO_TEST)) {
-          # code...
-          echo "<br> -- ESTADO PEDIDO INSERTADOS -- <br>";
-        }
-      }
+      /** TABLA ESTADO PEDIDO **/
+      // $TB_ESTADOPEDIDO = "CREATE TABLE estadoPedido (
+      //   idEstadoPedido INT NOT NULL AUTO_INCREMENT,
+      //   pedidoIdPedido INT,
+      //   estadoIdEstado INT,
+      //   PRIMARY KEY(idEstadoPedido)
+      // )";
+      //
+      // if (mysqli_query($con,$TB_ESTADOPEDIDO)) {
+      //   # code...
+      //   echo "<br> -- TABLA ESTADO PEDIDO CREADA --";
+      //   $ADD_PEDIDO_TEST = "INSERT INTO estadoPedido(idEstadoPedido,pedidoIdPedido,estadoIdEstado)
+      //                        VALUES ('','1','3')";
+      //   if (mysqli_query($con, $ADD_PEDIDO_TEST)) {
+      //     # code...
+      //     echo "<br> -- ESTADO PEDIDO INSERTADOS -- <br>";
+      //   }
+      // }
     }
 
     mysqli_close($con);
